@@ -1,0 +1,972 @@
+:root {
+  --dark-header: #111111;
+  --dark-background: #121214;
+  --dark-background-1: #292929;
+  --light-background: #e9e9ea;
+  --text-in-dark: #f9f9f9;
+  --text-in-dark-1: #F7F7F7;
+  --text-in-light: #0f1111;
+  --text-in-dark-accent: #e9dfcd;
+  --text-in-light-accent: #575b5e;
+  --text-gray: #C2C2C2;
+  --dark-hover: #333333;
+  --dark-hover-1: #444444;
+  --button-primary: #0bc4e2;
+  --button-primary-hover: #2597c8;
+  --button-secondary: #c28f2c;
+  --hover-border: #00a0ba;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+.bg-dark-header {
+  background-color: var(--dark-header);
+  color: var(--text-in-dark);
+}
+
+.bg-dark {
+  background-color: var(--dark-background);
+  color: var(--text-in-dark);
+}
+
+.bg-light {
+  background-color: var(--light-background);
+  color: var(--text-in-light);
+}
+
+.bg-dark.text-accent {
+  color: var(--text-in-dark-accent);
+}
+
+.bg-light.text-accent {
+  color: var(--text-in-light-accent);
+}
+
+.btn {
+  background-color: var(--button-primary);
+  color: var(--text-in-light);
+  border-radius: 20px;
+  padding: 8px;
+  border: var(--hover-border) 1px solid;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--button-primary-hover);
+  color: var(--text-in-dark);
+}
+
+.d-none {
+  display: none;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+#main-nav {
+  height: 80px;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main-nav-check-box,
+#main-nav .check-button {
+  display: none;
+  cursor: pointer;
+}
+
+#main-nav .check-button {
+  margin-right: 36px;
+}
+
+#main-nav-label {
+  font-weight: 1000;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-left: 36px;
+}
+
+#main-nav ul {
+  list-style: none;
+  margin-right: 64px;
+}
+
+#main-nav ul li {
+  position: relative;
+  float: left;
+}
+
+#main-nav > ul > li {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+#main-nav > ul > li:hover {
+  border-bottom: 5px var(--hover-border) solid;
+}
+
+#main-nav > ul > li:hover > a > span {
+  background-color: var(--dark-hover);
+}
+
+#main-nav ul li a {
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+#main-nav ul li a span {
+  height: 32px;
+  padding: 0 16px;
+  color: var(--text-in-dark);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+#main-nav .more-nav-link {
+  display: none;
+  align-items: center;
+}
+
+#main-nav .more-nav-link:hover {
+  cursor: default;
+}
+
+#main-nav .more-nav-link:hover > a > span {
+  background-color: var(--dark-hover);
+  cursor: default;
+}
+
+#main-nav .more-nav-link:hover ul {
+  display: initial;
+  border-top: 5px var(--hover-border) solid;
+}
+
+#main-nav .more-nav-link ul {
+  background-color: var(--dark-background-1);
+  position: absolute;
+  top: 75px;
+  padding: 8px;
+  display: none;
+}
+
+#main-nav .more-nav-link ul li {
+  width: 100%;
+}
+
+#main-nav .more-nav-link ul li a span {
+  width: 100%;
+  padding: 24px 16px;
+}
+
+#main-nav .more-nav-link ul li a:hover span {
+  background-color: var(--dark-hover-1);
+  cursor: pointer;
+}
+
+#intro, #bio, #skills, #projects, #education, #experiences, #awards, #profiles, #testimonials {
+  min-height: 100vh;
+}
+
+#education, #experiences, #awards, #profiles, #testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  padding: 32px;
+}
+
+#intro {
+  height: 100vh;
+  background: url(./img/Ionia_The_Placidium.webp) center no-repeat;
+  background-size: cover;
+}
+
+#intro > div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.dark-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#intro > .dark-mask {
+  text-align: center;
+  color: white;
+}
+
+#intro * {
+  transition: opacity 1s, background-color 1s;
+}
+
+.profile-image-layout { 
+  width: 100%;
+  position: relative;
+  top: 200px;
+  text-align: center;
+}
+
+.profile-image {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.profile-image-layout h1 {
+  margin-top: 32px;
+  font-size: 40px;
+}
+
+#intro .caption {
+  width: 100%;
+  position: absolute;
+  bottom: 64px;
+  text-align: center;
+}
+
+#bio {
+  padding: 128px;
+  text-align: center;
+}
+
+#bio > * {
+  opacity: 0;
+  transition: all 1s;
+}
+
+#bio.show > * {
+  opacity: 1;
+}
+
+#bio h1 {
+  font-size: 40px;
+  position: relative;
+  transform: translateY(80px);
+}
+
+#bio .content {
+  position: relative;
+  transform: translateY(160px);
+  margin-bottom: 80px;
+}
+
+#bio .content p {
+  font-size: 18px;
+  line-height: 1.5em;
+  margin-bottom: 1.3em;
+}
+
+#bio.show h1 {
+  transform: translateY(0);
+}
+
+#bio.show .content {
+  transform: translateY(80px);
+}
+
+#skills {
+  padding: 64px;
+  padding-top: 128px;
+  text-align: center;
+  position: relative;
+}
+
+#skills h1 {
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#skills.show h1 {
+  opacity: 1;
+}
+
+#skills .content {
+  margin-top: 40px;
+  margin-bottom: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#skills .content .skill-item {
+  display: none;
+  margin-top: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: center;
+  background-color: white;
+  border: darkgray 1px solid;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#skills.show .content .skill-item {
+  opacity: 1;
+}
+
+#skills .content .skill-item.c4-d-init {
+  display: initial;
+}
+
+#skills .content .skill-item .skill-icon {
+  height: 164px;
+  width: 100%;
+  background-color: #e4e4e4;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#skills .content .skill-item .skill-icon img {
+  max-height: 164px;
+  height: calc(100% - (16px * 2));
+}
+
+#skills .content .skill-item .details {
+  width: 100%;
+  border-top: lightgray 1px solid;
+  padding: 16px;
+  text-align: left;
+}
+
+#skills .content .skill-item .details.single-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+#skills .content .skill-item .details h2 {
+  font-size: 20px;
+}
+
+#skills .content .skill-item .details .sub-item {
+  margin-top: 16px;
+  margin-left: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#skills .content .skill-item .details .sub-item span {
+  color: var(--text-in-light);
+  background-color:  #d8d8d8;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+#skills .content .skill-item .details .level {
+  display: flex;
+  align-items: center;
+}
+
+#skills .content .skill-item .details .level i {
+  color: var(--button-primary);
+}
+
+#skills #skill-view-more-check-box {
+  display: none;
+}
+
+#skills .check-button {
+  width: 256px;
+  border: gray 1px solid;
+  line-height: 40px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .check-button:hover {
+  color: var(--text-in-dark);
+  background-color: var(--button-primary-hover);
+}
+
+#skills .check-button.view-less {
+  display: none;
+}
+
+#skills #skill-view-more-check-box:checked ~ .content .skill-item {
+  display: initial;
+}
+
+#skills #skill-view-more-check-box:checked ~ .check-button.view-more {
+  display: none;
+}
+
+#skills #skill-view-more-check-box:checked ~ .check-button.view-less {
+  display: flex;
+}
+
+#projects {
+  padding: 64px;
+  padding-top: 128px;
+  text-align: center;
+  position: relative;
+}
+
+#projects h1 {
+  font-size: 40px;
+}
+
+#projects > h1 {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#projects.show h1 {
+  opacity: 1;
+}
+
+#projects .content {
+  margin-top: 40px;
+  margin-bottom: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#projects .content .project-item {
+  display: none;
+  margin-top: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: center;
+  background-color: white;
+  border: darkgray 1px solid;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#projects.show .content .project-item {
+  opacity: 1;
+}
+
+#projects .content .project-item.c5-d-init {
+  display: initial;
+}
+
+#projects .content .project-item .project-icon {
+  height: 164px;
+  width: 100%;
+  background-color: #e4e4e4;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects .content .project-item .project-icon img {
+  max-height: 164px;
+  height: calc(100% - (16px * 2));
+}
+
+#projects .content .project-item .details {
+  width: 100%;
+  border-top: lightgray 1px solid;
+  padding: 16px;
+  text-align: left;
+}
+
+#projects .content .project-item .details p {
+  color: gray;
+  margin-top: 8px;
+  line-height: 1.3em;
+}
+
+#projects .content .project-item .details .tags {
+  border-top: lightgray 1px solid;
+  margin-top: 8px;
+}
+
+#projects .content .project-item .details .tags span {
+  display: inline-block;
+  color: var(--text-in-light);
+  background-color:  #d8d8d8;
+  padding: 4px 12px;
+  margin-top: 8px;
+  border-radius: 16px;
+}
+
+#projects .content .project-item .details .links {
+  border-top: lightgray 1px solid;
+  margin-top: 8px;
+}
+
+#projects .content .project-item .details .links .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+
+#projects #project-view-more-check-box {
+  display: none;
+}
+
+#projects .check-button {
+  width: 256px;
+  border: gray 1px solid;
+  line-height: 40px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects .check-button:hover {
+  color: var(--text-in-dark);
+  background-color: var(--button-primary-hover);
+}
+
+#projects .check-button.view-less {
+  display: none;
+}
+
+#projects #project-view-more-check-box:checked ~ .content .project-item {
+  display: initial;
+}
+
+#projects #project-view-more-check-box:checked ~ .check-button.view-more {
+  display: none;
+}
+
+#projects #project-view-more-check-box:checked ~ .check-button.view-less {
+  display: flex;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility .5s, opacity .5s;
+}
+
+.modal .window {
+  position: relative;
+  background-color: var(--light-background);
+  width: calc(100% - 128px);
+  height: calc(100% - 128px);
+  top: 32px;
+  padding: 32px;
+}
+
+.modal .window h1 {
+  text-align: start;
+}
+
+.modal .window .screenshots {
+  position: relative;
+  margin-top: 32px;
+  height: calc(100% - 32px - 64px - 32px);
+  min-height: 256px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal .window .screenshots button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 20%;
+  min-height: 64px;
+}
+
+.modal .window .screenshots button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal .window .screenshots button i {
+  font-size: 40px;
+}
+
+.modal .window .screenshots .btn-left {
+  left: 24px;
+}
+
+.modal .window .screenshots .btn-right {
+  right: 24px;
+}
+
+.modal .window .screenshots img {
+  display: none;
+}
+
+.modal .window .screenshots img.active {
+  display: initial;
+}
+
+.modal .window p {
+  margin-top: 24px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.modal .close .material-icons {
+  color: white; 
+  background-color: red; 
+  padding: 1px; 
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.modal .close:hover .material-icons {
+  color: white; 
+  background-color: rgb(180, 35, 35);
+}
+
+#basic-e-commerce:not(:target),
+#computerized-voting-system:not(:target),
+#payroll-system:not(:target),
+#iwas-corona:not(:target) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (max-width: 1300px) {
+  #skills .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #skills .content .skill-item.c4-d-init {
+    display: none;
+  }
+
+  #skills .content .skill-item.c3-d-init {
+    display: initial;
+  }
+
+  #projects .content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #projects .content .project-item.c5-d-init {
+    display: none;
+  }
+
+  #projects .content .project-item.c4-d-init {
+    display: initial;
+  }
+}
+
+@media (max-width: 1180px) {
+  #main-nav .more-nav-link {
+    display: flex;
+  }
+
+  #main-nav ul li:nth-child(8), 
+  #main-nav ul li:nth-child(9) {
+    display: none;
+  }
+
+  #main-nav .more-nav-link ul li:nth-child(1), 
+  #main-nav .more-nav-link ul li:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 1030px) {
+  #main-nav ul li:nth-child(6),
+   #main-nav ul li:nth-child(7) {
+    display: none;
+  }
+
+  #main-nav .more-nav-link ul li:nth-child(1), 
+  #main-nav .more-nav-link ul li:nth-child(2) {
+    display: block;
+  }
+
+  #skills .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #skills .content .skill-item {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  #skills .content .skill-item.c3-d-init {
+    display: none;
+  }
+
+  #skills .content .skill-item.c2-d-init {
+    display: initial;
+  }
+
+  #projects .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #projects .content .project-item.c4-d-init {
+    display: none;
+  }
+
+  #projects .content .project-item.c3-d-init {
+    display: initial;
+  }
+}
+
+@media (max-width: 900px) {
+  #skills .content .skill-item {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  #projects .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #projects .content .project-item.c3-d-init {
+    display: none;
+  }
+
+  #projects .content .project-item.c2-d-init {
+    display: initial;
+  }
+}
+
+@media (max-width: 780px) {
+  #main-nav ul {
+    background-color: var(--dark-header);
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-right: 0;
+    border-top: 4px var(--dark-background-1) solid;
+  }
+
+  #main-nav li {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #main-nav .check-button {
+    display: block;
+  }
+
+  #main-nav #main-nav-check-box:checked ~ ul {
+    display: initial;
+  }
+
+  #main-nav .more-nav-link {
+    display: none;
+  }
+
+  #main-nav ul li:nth-child(6), 
+  #main-nav ul li:nth-child(7),
+  #main-nav ul li:nth-child(8),
+  #main-nav ul li:nth-child(9) {
+    display: flex;
+  }
+
+  #intro .caption {
+    bottom: 32px;
+  }
+
+  #skills .content {
+    grid-template-columns: 1fr;
+  }
+
+  #skills .content .skill-item {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  #skills .content .skill-item.c2-d-init {
+    display: none;
+  }
+
+  #skills .content .skill-item.c1-d-init {
+    display: initial;
+  }
+
+  #projects .content {
+    grid-template-columns: 1fr;
+  }
+
+  #projects .content .project-item.c2-d-init {
+    display: none;
+  }
+
+  #projects .content .project-item.c1-d-init {
+    display: initial;
+  }
+
+  .modal .window {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: scroll;
+  }
+
+  .modal .window h1 {
+    margin-left: 24px;
+    margin-top: 24px;
+  }
+
+  .modal .window .screenshots {
+    height: calc(100% - 64px - 64px - 40px);
+  }
+
+  .modal .window .screenshots button {
+    width: 60px;
+  }
+
+  .modal .window .screenshots .btn-left {
+    left: 8px;
+  }
+  
+  .modal .window .screenshots .btn-right {
+    right: 8px;
+  }
+
+  .modal .window {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  #skills .content .skill-item {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  #skills .content .skill-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #projects .content .project-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  #skills {
+    padding: 32px;
+  }
+
+  #projects {
+    padding: 32px;
+  }
+}
+
+@media (max-height: 805px) {
+  .profile-image-layout { 
+    top: 150px;
+  }
+
+  #intro .caption {
+    bottom: 32px;
+  }
+}
+
+@media (max-height: 650px) {
+  .profile-image-layout { 
+    top: 100px;
+  }
+}
+
+@media (max-height: 575px) {
+  .profile-image-layout { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-image-layout h1 {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+
+  .modal .window {
+    overflow: scroll;
+  }
+}
+
+@media (max-height: 575px) and (max-width: 780px) {
+  .profile-image-layout { 
+    display: initial;
+  }
+
+  .profile-image-layout h1 {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+}
+
+@media (max-height: 805px) and (max-width: 780px) {
+  #main-nav > ul > li {
+    height: 60px;
+  }
+}
+
+@media (max-height: 625px) and (max-width: 780px) {
+  #main-nav > ul > li {
+    height: 40px;
+  }
+
+  #main-nav > ul > li:hover {
+    cursor: pointer;
+    border-bottom: none;
+  }
+}
