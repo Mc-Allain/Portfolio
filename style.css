@@ -526,7 +526,6 @@
   margin-top: 8px;
 }
 
-
 #projects #project-view-more-check-box {
   display: none;
 }
@@ -577,7 +576,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -590,63 +589,37 @@
   width: calc(100% - 128px);
   height: calc(100% - 128px);
   top: 32px;
-  padding: 32px;
 }
 
 .modal .window h1 {
   text-align: start;
+  margin: 24px;
 }
 
-.modal .window .screenshots {
-  position: relative;
-  margin-top: 32px;
-  height: calc(100% - 32px - 64px - 32px);
-  min-height: 256px;
-  display: flex;
-  justify-content: center;
+.modal .window ul {
+  overflow-y: scroll;
+  height: calc(100% - 40px - 8px - 24px - 24px - 24px);
+  margin: 0 24px;
+  border: gray 1px solid;
 }
 
-.modal .window .screenshots button {
+.modal .window ul li {
+  background-color: #e4e4e4;
+  margin: 16px;
+  padding: 8px;
+  border: darkgray 1px solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 20%;
-  min-height: 64px;
+  overflow: hidden;
 }
 
-.modal .window .screenshots button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+.modal .window ul li img {
+  max-width: 100%;
 }
 
-.modal .window .screenshots button i {
-  font-size: 40px;
-}
-
-.modal .window .screenshots .btn-left {
-  left: 24px;
-}
-
-.modal .window .screenshots .btn-right {
-  right: 24px;
-}
-
-.modal .window .screenshots img {
-  display: none;
-}
-
-.modal .window .screenshots img.active {
-  display: initial;
-}
-
-.modal .window p {
-  margin-top: 24px;
+.modal .window ul.medium li img, .modal .window ul li.medium img {
+  width: 400px;
 }
 
 .modal .close {
@@ -860,28 +833,16 @@
     margin-top: 24px;
   }
 
-  .modal .window .screenshots {
-    height: calc(100% - 64px - 64px - 40px);
-  }
-
-  .modal .window .screenshots button {
-    width: 60px;
-  }
-
-  .modal .window .screenshots .btn-left {
-    left: 8px;
-  }
-  
-  .modal .window .screenshots .btn-right {
-    right: 8px;
-  }
-
-  .modal .window {
-    padding: 8px;
+  .modal .window ul {
+    margin: 0 16px;
   }
 }
 
 @media (max-width: 650px) {
+  #bio {
+    padding: 64px;
+  }
+
   #skills .content .skill-item {
     margin-left: 32px;
     margin-right: 32px;
@@ -901,6 +862,11 @@
 }
 
 @media (max-width: 450px) {
+  #bio {
+    padding: 32px;
+    text-align: center;
+  }
+
   #skills {
     padding: 32px;
   }
@@ -936,10 +902,6 @@
   .profile-image-layout h1 {
     margin-top: 0;
     margin-left: 40px;
-  }
-
-  .modal .window {
-    overflow: scroll;
   }
 }
 

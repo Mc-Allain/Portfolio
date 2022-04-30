@@ -15,7 +15,7 @@ const projectCheckButton = document.getElementById("project-view-more-check-box"
 const projectLinks = document.querySelectorAll("#projects .content a");
 const projectModalCloseLinks = document.querySelectorAll("#projects .content .close");
 
-const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system"];
+const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system", "#iwas-corona"];
 
 const projectModals = document.querySelectorAll("#projects .content .modal");
 
