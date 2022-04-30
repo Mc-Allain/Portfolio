@@ -601,6 +601,7 @@
   height: calc(100% - 40px - 8px - 24px - 24px - 24px);
   margin: 0 24px;
   border: gray 1px solid;
+  list-style: none;
 }
 
 .modal .window ul li {
