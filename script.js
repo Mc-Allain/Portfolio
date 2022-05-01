@@ -126,6 +126,14 @@ function onScroll() {
                 section.classList.remove("show");
             }
         }
+
+        if (sectionId === "education") {
+            if (sectionTop < windowHeight - 256) {
+                section.classList.add("show");
+            } else {
+                section.classList.remove("show");
+            }
+        }
     }
 }
 
