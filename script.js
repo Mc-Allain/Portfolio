@@ -6,7 +6,7 @@ const mainNavItems = document.querySelectorAll("#main-nav > ul > li");
 const sections = document.querySelectorAll("section");
 
 const introDarkMask = document.querySelector("#intro > div");
-const introProfileImageLayout = document.querySelector("#intro .profile-image-layout");
+const introProfileImageLayout = document.querySelector("#intro .contact-image-layout");
 const introCaption = document.querySelector("#intro .caption");
 
 const skillCheckButton = document.getElementById("skill-view-more-check-box");
@@ -128,6 +128,30 @@ function onScroll() {
         }
 
         if (sectionId === "education") {
+            if (sectionTop < windowHeight - 256) {
+                section.classList.add("show");
+            } else {
+                section.classList.remove("show");
+            }
+        }
+
+        if (sectionId === "experiences") {
+            if (sectionTop < windowHeight - 256) {
+                section.classList.add("show");
+            } else {
+                section.classList.remove("show");
+            }
+        }
+
+        if (sectionId === "awards") {
+            if (sectionTop < windowHeight - 256) {
+                section.classList.add("show");
+            } else {
+                section.classList.remove("show");
+            }
+        }
+
+        if (sectionId === "contacts") {
             if (sectionTop < windowHeight - 256) {
                 section.classList.add("show");
             } else {
