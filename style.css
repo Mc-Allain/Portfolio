@@ -224,20 +224,20 @@
   transition: opacity 1s, background-color 1s;
 }
 
-.contact-image-layout { 
+.profile-image-layout { 
   width: 100%;
   position: relative;
   top: 200px;
   text-align: center;
 }
 
-.contact-image {
+.profile-image {
   height: 300px;
   width: 300px;
   border-radius: 50%;
 }
 
-.contact-image-layout h1 {
+.profile-image-layout h1 {
   margin-top: 32px;
   font-size: 40px;
 }
@@ -1260,7 +1260,7 @@
 }
 
 @media (max-height: 805px) {
-  .contact-image-layout { 
+  .profile-image-layout { 
     top: 150px;
   }
 
@@ -1270,30 +1270,30 @@
 }
 
 @media (max-height: 650px) {
-  .contact-image-layout { 
+  .profile-image-layout { 
     top: 100px;
   }
 }
 
 @media (max-height: 575px) {
-  .contact-image-layout { 
+  .profile-image-layout { 
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .contact-image-layout h1 {
+  .profile-image-layout h1 {
     margin-top: 0;
     margin-left: 40px;
   }
 }
 
 @media (max-height: 575px) and (max-width: 780px) {
-  .contact-image-layout { 
+  .profile-image-layout { 
     display: initial;
   }
 
-  .contact-image-layout h1 {
+  .profile-image-layout h1 {
     margin-top: 16px;
     margin-left: 0;
   }

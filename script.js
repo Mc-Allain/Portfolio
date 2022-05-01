@@ -6,7 +6,7 @@ const mainNavItems = document.querySelectorAll("#main-nav > ul > li");
 const sections = document.querySelectorAll("section");
 
 const introDarkMask = document.querySelector("#intro > div");
-const introProfileImageLayout = document.querySelector("#intro .contact-image-layout");
+const introProfileImageLayout = document.querySelector("#intro .profile-image-layout");
 const introCaption = document.querySelector("#intro .caption");
 
 const skillCheckButton = document.getElementById("skill-view-more-check-box");
@@ -16,39 +16,6 @@ const projectLinks = document.querySelectorAll("#projects .content a");
 const projectModalCloseLinks = document.querySelectorAll("#projects .content .close");
 
 const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system", "#iwas-corona"];
-
-const projectModals = document.querySelectorAll("#projects .content .modal");
-
-for (const projectModal of projectModals) {
-    const buttonLeft = projectModal.querySelector(".btn-left");
-    const buttonRight = projectModal.querySelector(".btn-right");
-    const images = projectModal.querySelectorAll(".screenshots img");
-    const navText = projectModal.querySelector("p");
-
-    let currentValue = navText != null ? navText.innerHTML.toString().split('/')[0] : 0;
-
-    if (buttonLeft != null) {
-        buttonLeft.addEventListener('click', function(event) {
-            currentValue--;
-            if (currentValue < 1) currentValue = images.length;
-            navText.innerHTML = currentValue + "/" + images.length;
-
-            removeActiveImage(images);
-            activateImage(images, currentValue - 1);
-        });
-    }
-
-    if (buttonRight != null) {
-        buttonRight.addEventListener('click', function(event) {
-            currentValue++;
-            if (currentValue > images.length) currentValue = 1;
-            navText.innerHTML = currentValue + "/" + images.length;
-
-            removeActiveImage(images);
-            activateImage(images, currentValue - 1);
-        });
-    }
-}
 
 function removeActiveImage(images) {
     for (const image of images) {
