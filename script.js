@@ -171,7 +171,7 @@ function onScroll() {
             }
         }
 
-        if (sectionId === "contacts") {
+        if (sectionId === "contact") {
             if (sectionTop < windowHeight - 256) {
                 section.classList.add("show");
             } else {
