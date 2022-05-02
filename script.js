@@ -155,7 +155,7 @@ function onScroll() {
             }
         }
 
-        if (sectionId === "experiences") {
+        if (sectionId === "experience") {
             if (sectionTop < windowHeight - 256) {
                 section.classList.add("show");
             } else {
