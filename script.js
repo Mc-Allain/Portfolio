@@ -17,6 +17,33 @@ const projectModalCloseLinks = document.querySelectorAll("#projects .content .cl
 
 const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system", "#iwas-corona"];
 
+const projectModals = document.querySelectorAll("#projects .modal");
+
+for (const projectModal of projectModals) {
+    const screenshotLists = projectModal.querySelectorAll("ul");
+
+    for (const screenshotList of screenshotLists) {
+        const viewTypeButtons = screenshotList.querySelectorAll("div p");
+        
+        for (const viewTypeButton of viewTypeButtons) {
+            viewTypeButton.addEventListener('click', function(event) {
+                if (viewTypeButton.getAttribute("class") !== "selected") {
+                    for (const viewTypeButton of viewTypeButtons) {
+                        viewTypeButton.classList.remove("selected");
+                    }
+                    viewTypeButton.classList.add("selected");
+        
+                    if (viewTypeButton.innerHTML === "LIST") {
+                        screenshotList.classList.remove("grid");
+                    } else if (viewTypeButton.innerHTML === "GRID") {
+                        screenshotList.classList.add("grid");
+                    }
+                }
+            });
+        }
+    }
+}
+
 function removeActiveImage(images) {
     for (const image of images) {
         image.classList.remove("active");
@@ -27,11 +54,37 @@ function activateImage(images, index) {
     images[index].classList.add("active");
 }
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('resize', resize, true);
+
+function resize() {
     if (window.innerWidth > 780) {
         mainNavCheckBox.checked = false;
+    } 
+
+    for (const projectModal of projectModals) {
+        const screenshotLists = projectModal.querySelectorAll("ul");
+
+        for (const screenshotList of screenshotLists) {
+            const viewTypeButtonsPanel = screenshotList.querySelector("div");
+            const viewTypeButtons = screenshotList.querySelectorAll("div p");
+
+            if (window.innerWidth > 780) {
+                viewTypeButtonsPanel.classList.remove("d-none");
+        
+                for (const viewTypeButton of viewTypeButtons) {                    
+                    if (viewTypeButton.innerHTML === "GRID" && viewTypeButton.getAttribute("class") === "selected") {
+                        screenshotList.classList.add("grid");
+                    }
+                }
+            } else {
+                viewTypeButtonsPanel.classList.add("d-none");
+                screenshotList.classList.remove("grid");
+            }
+        }
     }
-}, true);
+}
+
+resize();
 
 if (window.innerWidth <= 780) {
     for (const mainNavItem of mainNavItems) {

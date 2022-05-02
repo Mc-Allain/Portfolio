@@ -67,11 +67,11 @@
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .opacity-0 {
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 #main-nav {
@@ -186,7 +186,7 @@
   cursor: pointer;
 }
 
-#intro, #bio, #skills, #projects, #education, #experiences, #awards, #contacts, #testimonials {
+#intro, #bio, #skills, #projects, #education, #testimonials {
   min-height: 100vh;
 }
 
@@ -413,6 +413,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 #skills .check-button:hover {
@@ -557,6 +558,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 #projects .check-button:hover {
@@ -606,12 +608,13 @@
   top: 32px;
 }
 
-.modal .window h1 {
+#projects .modal .window h1 {
   text-align: start;
   margin: 24px;
 }
 
-.modal .window ul {
+#projects .modal .window ul {
+  position: relative;
   overflow-y: scroll;
   height: calc(100% - 40px - 8px - 24px - 24px - 24px);
   margin: 0 24px;
@@ -619,7 +622,12 @@
   list-style: none;
 }
 
-.modal .window ul li {
+#projects .modal .window ul.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#projects .modal .window ul li {
   background-color: #e4e4e4;
   margin: 16px;
   padding: 8px;
@@ -630,11 +638,45 @@
   overflow: hidden;
 }
 
-.modal .window ul li img {
+#projects .modal .window ul.grid li {
+  height: auto;
+  overflow: initial;
+}
+
+#projects .modal .window ul div {
+  display: flex;
+  position: fixed;
+  z-index: 101;
+  transform: translateY(-1px);
+  background-color: #C2C2C2;
+  border-top: darkgray 1px solid;
+  border-right: #C2C2C2 2px solid;
+  border-bottom: #C2C2C2 2px solid;
+  border-bottom-right-radius: 12px;
+  overflow: hidden;
+}
+
+#projects .modal .window ul div p {
+  color: var(--text-in-light);
+  height: 100%;
+  padding: 8px 12px;
+  cursor: default;
+}
+
+#projects .modal .window ul div p.selected {
+  background-color: #e3e3e3;
+}
+
+#projects .modal .window ul div p:not(.selected):hover {
+  background-color: #bbbbbb;
+  cursor: pointer;
+}
+
+#projects .modal .window ul li img {
   max-width: 100%;
 }
 
-.modal .window ul.medium li img, .modal .window ul li.medium img {
+#projects .modal .window ul.medium li img, .modal .window ul li.medium img {
   width: 400px;
 }
 
@@ -987,22 +1029,56 @@
   margin-top: 40px;
   margin-bottom: 56px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 #contacts .content .contact-item {
+  display: flex;
+  align-items: center;
   margin-top: 24px;
-  margin-left: 16px;
-  margin-right: 16px;
-  text-align: center;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 16px 20px;
   background-color: white;
   border: darkgray 1px solid;
   opacity: 0;
   transition: opacity 1s;
 }
 
+#contacts .content .contact-item.link {
+  display: initial;
+  padding: 0;
+}
+
+#contacts .content .contact-item.link a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+}
+
 #contacts.show .content .contact-item {
   opacity: 1;
+}
+
+#contacts.show .content .contact-item span {
+  font-size: 32px;
+  margin-right: 8px;
+}
+
+#contacts.show .content .contact-item h3 {
+  width: calc(100% - 32px);
+  text-align: center;
+}
+
+#contacts.show .content .contact-item a {
+  text-decoration: none;
+  color: var(--text-in-light);
+}
+
+#contacts.show .content .contact-item:nth-child(3) a:hover {
+  background-color: #3B5998;
+  color: var(--text-in-dark);
 }
 
 @media (max-width: 1300px) {
@@ -1030,6 +1106,10 @@
     display: initial;
   }
 
+  #projects .modal .window ul.grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   #education .content, #experiences .content {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -1039,7 +1119,7 @@
   }
 
   #contacts .content {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -1096,6 +1176,10 @@
     display: initial;
   }
 
+  #projects .modal .window ul.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   #education .content, #experiences .content {
     grid-template-columns: 1fr 1fr;
     padding: 0 32px;
@@ -1106,13 +1190,17 @@
   }
   
   #contacts .content {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding: 0 32px;
   }
 }
 
 @media (max-width: 900px) {
   #projects .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #projects .modal .window ul.grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1126,10 +1214,6 @@
 
   #awards .content {
     grid-template-columns: 1fr;
-  }
-  
-  #contacts .content {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1207,13 +1291,24 @@
     overflow: scroll;
   }
 
-  .modal .window h1 {
+  #projects .modal .window h1 {
     margin-left: 24px;
     margin-top: 24px;
+    margin-right: 72px;
   }
 
-  .modal .window ul {
+  #projects .modal .window ul {
     margin: 0 16px;
+  }
+
+  #projects .modal .window ul.grid {
+    grid-template-columns: 1fr;
+  }
+
+  #projects .modal .close {
+    top: calc(24px + 24px);
+    transform: translateY(-50%);
+    right: 32px;
   }
 
   #education .content, #experiences .content {
@@ -1233,7 +1328,7 @@
 
 @media (max-width: 650px) {
   #bio {
-    padding: 64px;
+    padding: 128px 64px;
   }
 
   #skills .content, #projects .content, #education .content, #experiences .content, #awards .content, #contacts .content, #testimonials .content {
@@ -1249,11 +1344,11 @@
 
 @media (max-width: 450px) {
   #bio {
-    padding: 32px;
+    padding: 128px 32px;
     text-align: center;
   }
 
-  #skills, #project, #education, #experiences, #awards, #contacts, #testimonials {
+  #skills, #projects, #education, #experiences, #awards, #contacts, #testimonials {
     padding: 64px 32px;
     padding-top: 128px;
   }
