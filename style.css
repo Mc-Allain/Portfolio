@@ -237,9 +237,26 @@
   border-radius: 50%;
 }
 
-.profile-image-layout h1 {
+.profile-image-layout .about {
   margin-top: 32px;
+  padding: 0 32px;
+}
+
+.profile-image-layout .about h1 {
   font-size: 40px;
+  margin: 0 16px;
+}
+
+.profile-image-layout .about div {
+  line-height: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
+  margin-top: 24px;
+}
+
+.profile-image-layout .about div p {
+  max-width: 512px;
 }
 
 #intro .caption {
@@ -1220,7 +1237,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 780px) {  
   #main-nav ul {
     background-color: var(--dark-header);
     height: 100vh;
@@ -1330,6 +1347,10 @@
 }
 
 @media (max-width: 650px) {
+  .profile-image-layout { 
+    top: 100px;
+  }
+  
   #bio {
     padding: 128px 64px;
   }
@@ -1346,6 +1367,11 @@
 }
 
 @media (max-width: 450px) {
+  .profile-image-layout .profile-image {
+    height: 200px;
+    width: 200px;
+  }
+
   #bio {
     padding: 128px 32px;
     text-align: center;
@@ -1367,39 +1393,67 @@
   }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 700px) {
   .profile-image-layout { 
     top: 100px;
   }
 }
 
-@media (max-height: 575px) {
+@media (max-height: 650px) {
+  .profile-image-layout { 
+    top: 150px;
+  }
+
   .profile-image-layout { 
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .profile-image-layout h1 {
+  .profile-image-layout .profile-image {
+    margin-left: 32px;
+  }
+
+  .profile-image-layout .about {
     margin-top: 0;
-    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-image-layout .about div {
+    margin-top: 0;
   }
 }
 
-@media (max-height: 575px) and (max-width: 780px) {
-  .profile-image-layout { 
+@media (max-height: 650px) and (max-width: 1115px){
+  .profile-image-layout .about {
     display: initial;
   }
 
-  .profile-image-layout h1 {
-    margin-top: 16px;
-    margin-left: 0;
+  .profile-image-layout .about div {
+    margin-top: 32px;
   }
 }
 
 @media (max-height: 805px) and (max-width: 780px) {
   #main-nav > ul > li {
     height: 60px;
+  }
+}
+
+@media (max-height: 650px) and (max-width: 780px) {
+  .profile-image-layout {
+    top: 200px;
+  }
+
+  .profile-image-layout .profile-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .profile-image-layout .about h1 {
+    margin-top: 16px;
   }
 }
 
@@ -1411,5 +1465,24 @@
   #main-nav > ul > li:hover {
     cursor: pointer;
     border-bottom: none;
+  }
+}
+
+@media (max-height: 650px) and (max-width: 550px) {
+  .profile-image-layout {
+    display: initial;
+    top: 100px;
+  }
+}
+
+@media (max-height: 550px) and (max-width: 675px) and (min-width: 550px) {
+  .profile-image-layout {
+    top: 120px;
+  }
+}
+
+@media (max-height: 470px) and (max-width: 675px) {
+  .profile-image-layout {
+    top: 100px;
   }
 }
