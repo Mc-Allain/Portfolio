@@ -662,7 +662,7 @@
   position: fixed;
   z-index: 101;
   transform: translateY(-1px);
-  background-color: #C2C2C2;
+  background-color: #e3e3e3;
   border-top: darkgray 1px solid;
   border-right: #C2C2C2 2px solid;
   border-bottom: #C2C2C2 2px solid;
@@ -678,11 +678,11 @@
 }
 
 #projects .modal .window ul div p.selected {
-  background-color: #e3e3e3;
+  background-color: #C2C2C2;
 }
 
 #projects .modal .window ul div p:not(.selected):hover {
-  background-color: #bbbbbb;
+  background-color: #dadada;
   cursor: pointer;
 }
 
