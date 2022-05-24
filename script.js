@@ -32,9 +32,18 @@ function activateImage(images, index) {
 
 window.addEventListener('resize', resize, true);
 
+mainNavCheckBox.addEventListener('change', function(event) {
+    if (mainNavCheckBox.checked) {
+        body.classList.add("overflow-hidden");
+    } else {
+        body.classList.remove("overflow-hidden");
+    }
+});
+
 function resize() {
     if (window.innerWidth > 780) {
         mainNavCheckBox.checked = false;
+        body.classList.remove("overflow-hidden");
         /* if (sections[0].getBoundingClientRect().bottom > window.innerHeight - 1) {
             mainNav.classList.add("bg-dark-50");
         } */
@@ -85,7 +94,7 @@ projectCheckButton.addEventListener('change', function(event) {
 
 function onScroll() {
     for (const section of sections) {
-        const windowWidth = window.innerWidth;
+        //const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const sectionId = section.getAttribute("id");
         const sectionTop = section.getBoundingClientRect().top;
