@@ -190,11 +190,11 @@
   cursor: pointer;
 }
 
-#intro, #bio, #skills, #projects, #education, #testimonials {
+#intro, #bio, #skills, #projects, #education, #references {
   min-height: 100vh;
 }
 
-#testimonials {
+#references {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -720,7 +720,10 @@
 #basic-e-commerce:not(:target),
 #computerized-voting-system:not(:target),
 #payroll-system:not(:target),
-#iwas-corona:not(:target) {
+#iwas-corona:not(:target),
+#wsap-internship-portal:not(:target),
+#wsap-android-app:not(:target),
+#mobile-palengke:not(:target) {
   visibility: hidden;
   opacity: 0;
 }
@@ -1359,13 +1362,13 @@
     padding: 128px 64px;
   }
 
-  #skills .content, #projects .content, #education .content, #experience .content, #awards .content, #contact .content, #testimonials .content {
+  #skills .content, #projects .content, #education .content, #experience .content, #awards .content, #contact .content, #references .content {
     padding: 0 32px;
   }
 }
 
 @media (max-width: 600px) {
-  #skills .content, #projects .content, #education .content, #experience .content, #awards .content, #contact .content, #testimonials .content {
+  #skills .content, #projects .content, #education .content, #experience .content, #awards .content, #contact .content, #references .content {
     padding: 0;
   }
 }
@@ -1381,7 +1384,7 @@
     text-align: center;
   }
 
-  #skills, #projects, #education, #experience, #awards, #contact, #testimonials {
+  #skills, #projects, #education, #experience, #awards, #contact, #references {
     padding: 64px 32px;
     padding-top: 128px;
   }

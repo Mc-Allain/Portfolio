@@ -16,7 +16,7 @@ const projectCheckButton = document.getElementById("project-view-more-check-box"
 const projectLinks = document.querySelectorAll("#projects .content a");
 const projectModalCloseLinks = document.querySelectorAll("#projects .content .close");
 
-const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system", "#iwas-corona"];
+const projectLinksValue = ["#basic-e-commerce", "#computerized-voting-system", "#payroll-system", "#iwas-corona", "#mobile-palengke", "#wsap-internship-portal", "#wsap-android-app"];
 
 const projectModals = document.querySelectorAll("#projects .modal");
 
@@ -60,8 +60,8 @@ function resize() {
 
             if (window.innerWidth > 780) {
                 viewTypeButtonsPanel.classList.remove("d-none");
-        
-                for (const viewTypeButton of viewTypeButtons) {                    
+
+                for (const viewTypeButton of viewTypeButtons) {
                     if (viewTypeButton.innerHTML === "GRID" && viewTypeButton.getAttribute("class") === "selected") {
                         screenshotList.classList.add("grid");
                     }
@@ -199,7 +199,7 @@ for (const projectModal of projectModals) {
 
     for (const screenshotList of screenshotLists) {
         const viewTypeButtons = screenshotList.querySelectorAll("div p");
-        
+
         for (const viewTypeButton of viewTypeButtons) {
             viewTypeButton.addEventListener('click', function(event) {
                 if (viewTypeButton.getAttribute("class") !== "selected") {
@@ -207,7 +207,7 @@ for (const projectModal of projectModals) {
                         viewTypeButton.classList.remove("selected");
                     }
                     viewTypeButton.classList.add("selected");
-        
+
                     if (viewTypeButton.innerHTML === "LIST") {
                         screenshotList.classList.remove("grid");
                     } else if (viewTypeButton.innerHTML === "GRID") {
