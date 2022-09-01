@@ -8,7 +8,6 @@ const sections = document.querySelectorAll("section");
 
 const introDarkMask = document.querySelector("#intro > div");
 const introProfileImageLayout = document.querySelector("#intro .profile-image-layout");
-const introCaption = document.querySelector("#intro .caption");
 
 const skillCheckButton = document.getElementById("skill-view-more-check-box");
 const projectCheckButton = document.getElementById("project-view-more-check-box");
@@ -105,12 +104,10 @@ function onScroll() {
                 introDarkMask.classList.remove("dark-mask");
                 introDarkMask.classList.add("bg-dark");
                 introProfileImageLayout.classList.add("opacity-0");
-                introCaption.classList.add("opacity-0");
             } else {
                 introDarkMask.classList.remove("bg-dark");
                 introDarkMask.classList.add("dark-mask");
                 introProfileImageLayout.classList.remove("opacity-0");
-                introCaption.classList.remove("opacity-0");
             }
 
             /* if (sectionBottom < windowHeight - 1) {
