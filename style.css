@@ -1113,7 +1113,12 @@
   color: var(--text-in-dark);
 }
 
-#contact.show .content .contact-item.link.fb a:hover > .icon {
+#contact.show .content .contact-item.link.linked-in a:hover {
+  background-color: #0A67C5;
+  color: var(--text-in-dark);
+}
+
+#contact.show .content .contact-item.link.fb a:hover > .icon, .contact-item.link.linked-in a:hover > .icon {
   filter: invert(100%);
 }
 
