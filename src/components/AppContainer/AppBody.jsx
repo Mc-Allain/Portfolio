@@ -1,12 +1,17 @@
+import classNames from "classnames";
 import React, { useContext } from "react";
 import { LightDarkThemeContext } from "../../providers/LightDarkTheme";
+import { Theme } from "../DarkModeSwitchToggle";
 
 const AppHeader = ({ children }) => {
   const { theme } = useContext(LightDarkThemeContext);
 
   return (
     <div className="grow w-full flex justify-center overflow-y-scroll">
-      <div className="min-h-full h-fit bg-white max-w-[800px]">{children}</div>
+      <div className={classNames('min-h-full h-fit max-w-[800px]', {
+        'bg-white text-black': theme === Theme.LIGHT,
+        'bg-gray-800 text-white': theme === Theme.DARK,
+      })}>{children}</div>
     </div>
   );
 };

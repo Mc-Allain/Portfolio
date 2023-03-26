@@ -18,7 +18,7 @@ export const LightDarkThemeContext = createContext(Theme);
 
 // Provider
 const LightDarkThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(Theme.LIGHT);
+  const [theme, setTheme] = useState(Theme.DARK);
 
   const changeTheme = (selectedTheme) => {
     setTheme(selectedTheme);
