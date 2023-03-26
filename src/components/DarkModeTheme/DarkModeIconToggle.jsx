@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { LightDarkThemeContext, Theme } from "../../providers/LightDarkTheme";
+import ConstantValues from "../../providers/Constants";
 
 const DarkModeIconToggle = () => {
   const { theme, changeTheme } = useContext(LightDarkThemeContext);
 
   const selectTheme = (selectedTheme) => {
     changeTheme(selectedTheme);
+    localStorage.setItem(ConstantValues.localStorageThemeKey, selectedTheme);
   };
 
   return (

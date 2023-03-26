@@ -1,21 +1,11 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import DarkModeSwitchToggle from "../components/DarkModeTheme/DarkModeSwitchToggle";
+import ConstantValues from "./Constants";
 
+// Values
 export const Theme = {
   LIGHT: "LIGHT_THEME",
   DARK: "DARK_THEME",
-};
-
-export const LightDarkThemeToggle = ({
-  onThemeChange = () => {},
-  initialTheme = Theme.LIGHT,
-}) => {
-  return (
-    <DarkModeSwitchToggle
-      onThemeChange={onThemeChange}
-      initialTheme={initialTheme}
-    />
-  );
 };
 
 // Created Context from Values
@@ -24,9 +14,17 @@ export const LightDarkThemeContext = createContext(Theme);
 // Provider
 const LightDarkThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(Theme.LIGHT);
+  
+  useEffect(() => {
+    const savedTheme = localStorage.getItem(ConstantValues.localStorageThemeKey);
+    if (savedTheme) {
+      changeTheme(savedTheme);
+    }
+  }, []);
 
   const changeTheme = (selectedTheme) => {
     setTheme(selectedTheme);
+    localStorage.setItem(ConstantValues.localStorageThemeKey, selectedTheme);
   }
 
   const value = {
@@ -38,6 +36,22 @@ const LightDarkThemeProvider = ({ children }) => {
     <LightDarkThemeContext.Provider value={value}>
       {children}
     </LightDarkThemeContext.Provider>
+  );
+};
+
+
+// Default Theme Component
+export const LightDarkThemeToggle = () => {
+  const { theme, changeTheme } = useContext(LightDarkThemeContext);
+
+  const selectTheme = (selectedTheme) => {
+    changeTheme(selectedTheme);
+  };
+  return (
+    <DarkModeSwitchToggle
+      onThemeChange={selectTheme}
+      initialTheme={theme}
+    />
   );
 };
 
