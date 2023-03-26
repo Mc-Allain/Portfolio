@@ -1,5 +1,10 @@
 import React, { useState, createContext } from "react";
-import DarkModeSwitchToggle, { Theme } from "../components/DarkModeSwitchToggle";
+import DarkModeSwitchToggle from "../components/DarkModeTheme/DarkModeSwitchToggle";
+
+export const Theme = {
+  LIGHT: "LIGHT_THEME",
+  DARK: "DARK_THEME",
+};
 
 export const LightDarkThemeToggle = ({
   onThemeChange = () => {},
@@ -18,7 +23,7 @@ export const LightDarkThemeContext = createContext(Theme);
 
 // Provider
 const LightDarkThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(Theme.DARK);
+  const [theme, setTheme] = useState(Theme.LIGHT);
 
   const changeTheme = (selectedTheme) => {
     setTheme(selectedTheme);

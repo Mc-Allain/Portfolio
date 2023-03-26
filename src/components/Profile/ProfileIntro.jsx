@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { LightDarkThemeContext } from "../../providers/LightDarkTheme";
-import { Theme } from "../DarkModeSwitchToggle";
+import { LightDarkThemeContext, Theme } from "../../providers/LightDarkTheme";
 
 const ProfileIntro = ({ main, secondary, location }) => {
   const { theme } = useContext(LightDarkThemeContext);

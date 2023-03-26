@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { LightDarkThemeContext } from "../../providers/LightDarkTheme";
+import { LightDarkThemeContext, Theme } from "../../providers/LightDarkTheme";
 import { LanguageContext } from "../../providers/Language";
 import classNames from "classnames";
-import { Theme } from "../DarkModeSwitchToggle";
 
 const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name, children }) => {
   const { theme } = useContext(LightDarkThemeContext);

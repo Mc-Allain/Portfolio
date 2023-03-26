@@ -3,6 +3,7 @@ import ProfileAndCoverPicture from "../components/Profile/ProfileAndCoverPicture
 import ProfileIntro from "../components/Profile/ProfileIntro";
 import { LanguageContext } from "../providers/Language";
 import ConstantValues from "../providers/Constants";
+import DarkModePanel from "../components/DarkModeTheme/DarkModePanel";
 
 const Home = () => {
   const { language } = useContext(LanguageContext);
@@ -13,7 +14,9 @@ const Home = () => {
         profilePicture={ConstantValues.profilePicture}
         coverPicture={ConstantValues.coverPicture}
         name={language.firstNameLastName}
-      />
+      >
+        <DarkModePanel />
+      </ProfileAndCoverPicture>
       <ProfileIntro
         main={language.mainIntro}
         secondary={language.secondaryIntro}

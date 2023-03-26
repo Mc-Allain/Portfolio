@@ -1,5 +1,6 @@
 import React from "react";
-import SwitchToggle from "./SwitchToggle";
+import { Theme } from "../../providers/LightDarkTheme";
+import SwitchToggle from "../SwitchToggle";
 
 const DarkModeSwitchToggle = ({
   onThemeChange = () => {},
@@ -13,11 +14,6 @@ const DarkModeSwitchToggle = ({
   };
 
   return <SwitchToggle onChange={handleToggle} initialValue={initialValue} />;
-};
-
-export const Theme = {
-  LIGHT: "LIGHT_THEME",
-  DARK: "DARK_THEME",
 };
 
 export default DarkModeSwitchToggle;
