@@ -20,8 +20,8 @@ const DarkModeSwitchToggle = ({
 };
 
 export const Theme = {
-  LIGHT: "LIGHT THEME",
-  DARK: "DARK THEME",
+  LIGHT: "LIGHT_THEME",
+  DARK: "DARK_THEME",
 };
 
 export default DarkModeSwitchToggle;

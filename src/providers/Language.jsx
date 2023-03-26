@@ -4,13 +4,12 @@ import React, { useState, createContext } from "react";
 // Values
 const LanguageValues = {
   en: {
-      displayName: 'Display Name',
+      namePlaceholder: 'Your Name Displays Here',
   },
   jp: {
-      displayName: 'Namae',
+    namePlaceholder: 'ここにお名前が表示されます',
   }
 }
-
 
 // Created Context from Values
 export const LanguageContext = createContext(LanguageValues);

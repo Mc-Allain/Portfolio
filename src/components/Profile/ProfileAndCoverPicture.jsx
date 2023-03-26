@@ -7,7 +7,7 @@ const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name }) => {
   const { language } = useContext(LanguageContext);  
 
   if (name === undefined) {
-    name = language.displayName;
+    name = language.namePlaceholder;
   }
 
   return <div>{ name + ' ' + theme }</div>;
