@@ -4,7 +4,10 @@ import React, { useState, createContext } from "react";
 // Values
 const LanguageValues = {
   en: {
-      namePlaceholder: 'Your Name Displays Here',
+    portfolio: 'Portfolio',
+    profilePicture: 'Profile Picture',
+    coverPicture: 'Cover Picture',
+    namePlaceholder: 'Your Name Displays Here',
   },
   jp: {
     namePlaceholder: 'ここにお名前が表示されます',

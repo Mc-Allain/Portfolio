@@ -1,17 +1,22 @@
 import "./App.css";
-import Home from "./pages/Home";
-import ConstantProvider from "./providers/Constants";
 import LanguageProvider from "./providers/Language";
 import LightDarkThemeProvider from "./providers/LightDarkTheme";
+import AppHeader from "./components/AppContainer/AppHeader";
+import AppBody from "./components/AppContainer/AppBody";
+import Home from "./pages/Home";
+import AppContainer from "./components/AppContainer";
 
 const App = () => {
   return (
     <div className="App">
       <LightDarkThemeProvider>
         <LanguageProvider>
-          <ConstantProvider>
-            <Home />
-          </ConstantProvider>
+          <AppContainer>
+            <AppHeader />
+            <AppBody>
+              <Home />
+            </AppBody>
+          </AppContainer>
         </LanguageProvider>
       </LightDarkThemeProvider>
     </div>

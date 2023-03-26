@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import ProfileAndCoverPicture from "../components/Profile/ProfileAndCoverPicture";
-import { ConstantContext } from "../providers/Constants";
+import ConstantValues from "../providers/Constants";
 
 const Home = () => {
-  const { ConstantValues } = useContext(ConstantContext);
 
   return (
     <div>

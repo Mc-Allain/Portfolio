@@ -1,9 +1,10 @@
-import React, { createContext } from "react";
+import Profile from "../images/Profile/Profile.jpg";
+import Cover from "../images/Profile/Cover.jpg";
 
 // Values
 const ConstantValues = {
-  profilePicture: "./images/Profile.jpg",
-  coverPicture: "./images/Cover.jpg",
+  profilePicture: Profile,
+  coverPicture: Cover,
   lastName: "Casindad",
   firstName: "Mc Allain",
   middleName: "Sanchez",
@@ -16,21 +17,5 @@ const ConstantValues = {
   firstNameLastName: 'Mc Allain Casindad'
 };
 
-// Created Context from Values
-export const ConstantContext = createContext(ConstantValues);
-
-// Provider
-const ConstantProvider = ({ children }) => {
-  const value = {
-    ConstantValues,
-  };
-
-  return (
-    <ConstantContext.Provider value={value}>
-      {children}
-    </ConstantContext.Provider>
-  );
-};
-
-// Export Provider as Default
-export default ConstantProvider;
+// Export Values as Default
+export default ConstantValues;

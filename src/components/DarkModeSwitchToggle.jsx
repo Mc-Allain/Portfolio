@@ -12,11 +12,7 @@ const DarkModeSwitchToggle = ({
     onThemeChange(selectedTheme);
   };
 
-  return (
-    <div>
-      <SwitchToggle onChange={handleToggle} initialValue={initialValue} />
-    </div>
-  );
+  return <SwitchToggle onChange={handleToggle} initialValue={initialValue} />;
 };
 
 export const Theme = {
