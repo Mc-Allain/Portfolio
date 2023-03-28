@@ -10,9 +10,9 @@ const AppHeader = () => {
   return (
     <div
       className={classNames(`min-h-[32px] min-h-[44px] grow-0 w-full uppercase text-lg font-semibold 
-      flex items-center px-4 lg:px-8 sticky top-0`, {
-        'bg-white border-b text-black': theme === Theme.LIGHT,
-        'bg-gray-900 border-b text-white': theme === Theme.DARK,
+      flex items-center px-4 lg:px-8 sticky top-0 border-b-[1px]`, {
+        'bg-gray-100 text-black border-gray-300': theme === Theme.LIGHT,
+        'bg-gray-900 text-white border-gray-600': theme === Theme.DARK,
       })}
     >
       {language.portfolio}

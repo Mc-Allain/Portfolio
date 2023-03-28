@@ -12,7 +12,10 @@ const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name, children }
   }
 
   return (
-    <div>
+    <div className={classNames({
+      'bg-white': theme === Theme.LIGHT,
+      'bg-gray-800': theme === Theme.DARK,
+    })}>
       <div className="w-full h-[36vw] max-h-[290px] overflow-hidden">
         <img src={coverPicture} alt={language.coverPicture} />
       </div>

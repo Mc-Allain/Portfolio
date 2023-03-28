@@ -5,7 +5,7 @@ import Cover from "../images/Profile/Cover.jpg";
 const ConstantValues = {
   profilePicture: Profile,
   coverPicture: Cover,
-  localStorageThemeKey: 'MCasindad_Portfolio_Theme',
+  localStorageThemeKey: 'Theme',
 };
 
 // Export Values as Default
