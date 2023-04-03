@@ -35,6 +35,13 @@ const Home = () => {
           <Tab name={'Links'}>Links</Tab>
           <Tab name={'References'}>References</Tab>
         </Dropdown>
+        <Dropdown name={'More'}>
+          <Tab name={'Links'}>Links</Tab>
+          <Tab name={'References'}>References</Tab>
+          <Tab name={'Projects'}>Projects</Tab>
+          <Tab name={'Experience'}>Experience</Tab>
+          <Tab name={'Education'}>Education</Tab>
+        </Dropdown>
       </ViewPager>
     </>
   );
