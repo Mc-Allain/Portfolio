@@ -8,22 +8,24 @@ import Dropdown, { DropdownBreakpoints } from "./Dropdown";
 const TabLayout = ({ tabs, onTabChange }) => {
   const { theme } = useContext(LightDarkThemeContext);
   const [selectedDropdown, selectDropdown] = useState(null);
-  const [dropdownTabs, setDropdownTabs] = useState([]);
+  const [dropdowns, setDropdowns] = useState([]);
 
   useEffect(() => {
-    const dropdownTabs = [];
+    const dropdowns = [];
 
     tabs.map((tab) => {
       if (tab.type === TabType.Dropdown) {
-        dropdownTabs.push({
+        dropdowns.push({
           id: tab.id,
           isShow: false,
           children: tab.item.props.children,
         });
       }
+
+      return tab;
     });
 
-    setDropdownTabs(dropdownTabs);
+    setDropdowns(dropdowns);
   }, [tabs]);
 
   const handleOnClick = (selectedTab) => {
@@ -36,25 +38,25 @@ const TabLayout = ({ tabs, onTabChange }) => {
   };
 
   const onBreakpointChange = (id, sizeType, breakpoints = DropdownBreakpoints) => {
-    // console.log(id, sizeType, breakpoints);
+    
   };
 
-  const showDropdown = (dropdown, selectedDropdown) => {
-    const filteredDropdownTab = dropdownTabs.filter((tab) => {
-      return tab.id === dropdown.id;
+  const initDropdown = (currentDropdown, selectedDropdown) => {
+    const filteredDropdownTabs = dropdowns.filter((dropdown) => {
+      return dropdown.id === currentDropdown.id;
     });
 
-    const dropdownTab = filteredDropdownTab.length > 0 ? filteredDropdownTab[0] : {children: []};
-    const children = dropdownTab.children;
-    console.log(dropdownTab);
+    const currentDropdownTabs = filteredDropdownTabs.length > 0 ? filteredDropdownTabs[0] : {children: []};
+    const children = currentDropdownTabs.children;
 
     const handleDropdownTabOnClick = (selectedTab) => {
       onTabChange(selectedDropdown, selectedTab.item);
+      selectDropdown(null);
     };
 
     return (
       <Dropdown
-        id={dropdown.id}
+        id={currentDropdown.id}
         handleDropdownTabOnClick={handleDropdownTabOnClick}
         onBreakpointChange={onBreakpointChange}
       >
@@ -76,8 +78,8 @@ const TabLayout = ({ tabs, onTabChange }) => {
             <TabCapsuleButton tab={tab} handleOnClick={handleOnClick}>
               {tab.value}
             </TabCapsuleButton>
-            {tab?.type === TabType.Dropdown && dropdownTabs.length > 0
-              ? showDropdown(tab, selectedDropdown)
+            {tab?.type === TabType.Dropdown && dropdowns.length > 0 && (tab === selectedDropdown)
+              ? initDropdown(tab, selectedDropdown)
               : ""}
           </div>
         );

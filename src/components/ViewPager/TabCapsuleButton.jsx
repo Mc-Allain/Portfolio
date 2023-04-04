@@ -22,8 +22,8 @@ const TabCapsuleButton = ({ children, tab, handleOnClick = () => {} }) => {
           tab.active && theme === Theme.DARK,
         'hover:bg-gray-700': !tab.active && theme === Theme.DARK,
       })}
-      onClick={(element) => {
-        if (!tab.active) {
+      onClick={() => {
+        if (!tab.active || tab.type === TabType.Dropdown) {
           handleOnClick(tab);
         }
       }}

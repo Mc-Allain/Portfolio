@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { TabType } from ".";
 import { LightDarkThemeContext, Theme } from "../../providers/LightDarkTheme";
 import TabCapsuleButton from "./TabCapsuleButton";
@@ -49,6 +49,7 @@ const Dropdown = ({
 }) => {
   const { theme } = useContext(LightDarkThemeContext);
   const [tabs, setTabs] = useState([]);
+  const breakPointsRef = useRef(breakPoints);
   const [currentSizeType, setSizeType] = useState(SizeType.SMALL);
 
   useEffect(() => {
@@ -64,31 +65,42 @@ const Dropdown = ({
 
     setTabs(initialTabs);
 
-    breakPoints = overrideBreakPoint(smallBreakpoint);
-    breakPoints = overrideBreakPoint(mediumBreakpoint, SizeType.MEDIUM);
-    breakPoints = overrideBreakPoint(largeBreakpoint, SizeType.LARGE);
-    breakPoints = overrideBreakPoint(
+
+    const overrideBreakPoint = (value, sizeType = SizeType.SMALL) => {
+      if (value !== DropdownBreakpoints[sizeType]) {
+        breakPointsRef.current[sizeType] = value;
+      }
+  
+      return breakPointsRef.current;
+    };
+
+    breakPointsRef.current = overrideBreakPoint(smallBreakpoint);
+    breakPointsRef.current = overrideBreakPoint(mediumBreakpoint, SizeType.MEDIUM);
+    breakPointsRef.current = overrideBreakPoint(largeBreakpoint, SizeType.LARGE);
+    breakPointsRef.current = overrideBreakPoint(
       extraLargeBreakpoint,
       SizeType.EXTRA_LARGE
     );
-    breakPoints = overrideBreakPoint(
+    breakPointsRef.current = overrideBreakPoint(
       doubleExtraLargeBreakpoint,
       SizeType.DOUBLE_EXTRA_LARGE
     );
+
+    console.log(breakPointsRef);
 
     const handleResize = () => {
       const width = window.innerWidth;
       let realtimeSizeType = SizeType.SMALL;
 
-      if (width >= breakPoints.DOUBLE_EXTRA_LARGE.minWidth) {
+      if (width >= breakPointsRef.current.DOUBLE_EXTRA_LARGE.minWidth) {
         realtimeSizeType = SizeType.DOUBLE_EXTRA_LARGE;
-      } else if (width >= breakPoints.EXTRA_LARGE.minWidth) {
+      } else if (width >= breakPointsRef.current.EXTRA_LARGE.minWidth) {
         realtimeSizeType = SizeType.EXTRA_LARGE;
-      } else if (width >= breakPoints.LARGE.minWidth) {
+      } else if (width >= breakPointsRef.current.LARGE.minWidth) {
         realtimeSizeType = SizeType.LARGE;
-      } else if (width >= breakPoints.MEDIUM.minWidth) {
+      } else if (width >= breakPointsRef.current.MEDIUM.minWidth) {
         realtimeSizeType = SizeType.MEDIUM;
-      } else if (width >= breakPoints.SMALL.minWidth) {
+      } else if (width >= breakPointsRef.current.SMALL.minWidth) {
         realtimeSizeType = SizeType.SMALL;
       }
 
@@ -101,25 +113,18 @@ const Dropdown = ({
     handleResize();
   }, [
     children,
-    breakPoints,
+    breakPointsRef,
     smallBreakpoint,
     mediumBreakpoint,
     largeBreakpoint,
     extraLargeBreakpoint,
     doubleExtraLargeBreakpoint,
+    currentSizeType,
   ]);
 
   useEffect(() => {
-    onBreakpointChange(id, currentSizeType, breakPoints);
-  }, [currentSizeType]);
-
-  const overrideBreakPoint = (value, sizeType = SizeType.SMALL) => {
-    if (value !== DropdownBreakpoints[sizeType]) {
-      breakPoints[sizeType] = value;
-    }
-
-    return breakPoints;
-  };
+    onBreakpointChange(id, currentSizeType, breakPointsRef.current);
+  }, [onBreakpointChange, id, currentSizeType, breakPointsRef]);
 
   const onTabChange = (selectedTab) => {
     const id = selectedTab.id;
@@ -147,7 +152,7 @@ const Dropdown = ({
   return (
     <div
       className={classNames(
-        `absolute border px-3 py-2 rounded-[16px] translate-y-12`,
+        `absolute border px-3 py-2 rounded-[16px] translate-y-9`,
         {
           "bg-gray-100 border-gray-300": theme === Theme.LIGHT,
           "bg-gray-900 border-gray-600": theme === Theme.DARK,
