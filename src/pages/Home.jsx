@@ -6,10 +6,17 @@ import ConstantValues from "../providers/Constants";
 import DarkModePanel from "../components/DarkModeTheme/DarkModePanel";
 import ViewPager from "../components/ViewPager";
 import Tab from "../components/ViewPager/Tab";
-import Dropdown from "../components/ViewPager/Dropdown";
+import Dropdown, { DropdownBreakpoints } from "../components/ViewPager/Dropdown";
 
 const Home = () => {
   const { language } = useContext(LanguageContext);
+  const dropdownBreakpoints = DropdownBreakpoints;
+
+  dropdownBreakpoints.SMALL.poppedTabs = 1;
+  dropdownBreakpoints.MEDIUM.poppedTabs = 2;
+  dropdownBreakpoints.LARGE.poppedTabs = 3;
+  dropdownBreakpoints.EXTRA_LARGE.poppedTabs = 4;
+  dropdownBreakpoints.DOUBLE_EXTRA_LARGE.poppedTabs = 5;
 
   return (
     <>

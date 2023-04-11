@@ -9,6 +9,7 @@ const TabLayout = ({ tabs, onTabChange }) => {
   const { theme } = useContext(LightDarkThemeContext);
   const [selectedDropdown, selectDropdown] = useState(null);
   const [dropdowns, setDropdowns] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState({});
 
   useEffect(() => {
     const dropdowns = [];
@@ -33,31 +34,56 @@ const TabLayout = ({ tabs, onTabChange }) => {
       selectDropdown(null);
       onTabChange(selectedTab, selectedTab.item);
     } else if (selectedTab.type === TabType.Dropdown) {
-      selectDropdown(selectedTab);
+      if (selectedDropdown !== selectedTab) {
+        selectDropdown(selectedTab);
+      } else {
+        selectDropdown(null);
+      }
     }
   };
 
-  const onBreakpointChange = (id, sizeType, breakpoints = DropdownBreakpoints) => {
-    
+  const onBreakpointChange = (
+    id,
+    sizeType,
+    breakpoints = DropdownBreakpoints
+  ) => {
+    const breakpoint = breakpoints[sizeType];
+    const children = getDropdownChildren(id);
+
+    console.log(breakpoint);
+    console.log("Popped Tabs: ", children.slice(0, breakpoint.poppedTabs));
+    console.log("Dropdown: ", children.slice(breakpoint.poppedTabs, children.length));
   };
 
-  const initDropdown = (currentDropdown, selectedDropdown) => {
-    const filteredDropdownTabs = dropdowns.filter((dropdown) => {
-      return dropdown.id === currentDropdown.id;
+  const getDropdownChildren = (dropdownId) => {
+    const filteredDropdowns = dropdowns.filter((dropdown) => {
+      return dropdown.id === dropdownId;
     });
 
-    const currentDropdownTabs = filteredDropdownTabs.length > 0 ? filteredDropdownTabs[0] : {children: []};
-    const children = currentDropdownTabs.children;
+    return filteredDropdowns.length > 0
+        ? filteredDropdowns[0].children
+        : [];
+  }
+
+  const initDropdown = (currentDropdown, selectedDropdown) => {
+    const children = getDropdownChildren(currentDropdown.id);
 
     const handleDropdownTabOnClick = (selectedTab) => {
       onTabChange(selectedDropdown, selectedTab.item);
+      setActiveDropdown({
+        selectedDropdown: selectedDropdown,
+        selectedTab: selectedTab,
+      });
       selectDropdown(null);
     };
 
     return (
       <Dropdown
         id={currentDropdown.id}
+        currentDropdown={currentDropdown}
+        selectedDropdown={selectedDropdown}
         handleDropdownTabOnClick={handleDropdownTabOnClick}
+        activeDropdown={activeDropdown}
         onBreakpointChange={onBreakpointChange}
       >
         {children}
@@ -78,7 +104,8 @@ const TabLayout = ({ tabs, onTabChange }) => {
             <TabCapsuleButton tab={tab} handleOnClick={handleOnClick}>
               {tab.value}
             </TabCapsuleButton>
-            {tab?.type === TabType.Dropdown && dropdowns.length > 0 && (tab === selectedDropdown)
+            {tab?.type === TabType.Dropdown &&
+            dropdowns.length > 0
               ? initDropdown(tab, selectedDropdown)
               : ""}
           </div>

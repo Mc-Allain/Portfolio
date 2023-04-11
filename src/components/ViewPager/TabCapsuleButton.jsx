@@ -13,8 +13,8 @@ const TabCapsuleButton = ({ children, tab, handleOnClick = () => {} }) => {
       className={classNames("px-4 py-1 mx-1 my-1 rounded-full font-medium h-fit whitespace-nowrap", {
         'text-gray-600': theme === Theme.LIGHT,
         'text-gray-400': theme === Theme.DARK,
-        'cursor-default': tab.active,
-        'cursor-pointer': !tab.active,
+        'cursor-default': tab.active && tab.type === TabType.Default,
+        'cursor-pointer': !tab.active || tab.type === TabType.Dropdown,
         'bg-blue-200 text-blue-500':
           tab.active && theme === Theme.LIGHT,
         'hover:bg-gray-300': !tab.active && theme === Theme.LIGHT,
