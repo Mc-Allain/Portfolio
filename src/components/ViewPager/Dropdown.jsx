@@ -44,7 +44,7 @@ const Dropdown = ({
   handleDropdownTabOnClick,
   activeDropdownTab,
   onBreakpointChange,
-  breakPoints = DropdownBreakpoints,
+  breakpoints = DropdownBreakpoints,
   smallBreakpoint = DropdownBreakpoints.SMALL,
   mediumBreakpoint = DropdownBreakpoints.MEDIUM,
   largeBreakpoint = DropdownBreakpoints.LARGE,
@@ -53,7 +53,7 @@ const Dropdown = ({
 }) => {
   const { theme } = useContext(LightDarkThemeContext);
   const [tabs, setTabs] = useState([]);
-  const breakPointsRef = useRef(breakPoints);
+  const breakpointsRef = useRef(breakpoints);
   const [sizeType, setSizeType] = useState(SizeType.SMALL);
 
   useEffect(() => {
@@ -81,26 +81,26 @@ const Dropdown = ({
 
     const overrideBreakPoint = (value, sizeType = SizeType.SMALL) => {
       if (value !== DropdownBreakpoints[sizeType]) {
-        breakPointsRef.current[sizeType] = value;
+        breakpointsRef.current[sizeType] = value;
       }
 
-      return breakPointsRef.current;
+      return breakpointsRef.current;
     };
 
-    breakPointsRef.current = overrideBreakPoint(smallBreakpoint);
-    breakPointsRef.current = overrideBreakPoint(
+    breakpointsRef.current = overrideBreakPoint(smallBreakpoint);
+    breakpointsRef.current = overrideBreakPoint(
       mediumBreakpoint,
       SizeType.MEDIUM
     );
-    breakPointsRef.current = overrideBreakPoint(
+    breakpointsRef.current = overrideBreakPoint(
       largeBreakpoint,
       SizeType.LARGE
     );
-    breakPointsRef.current = overrideBreakPoint(
+    breakpointsRef.current = overrideBreakPoint(
       extraLargeBreakpoint,
       SizeType.EXTRA_LARGE
     );
-    breakPointsRef.current = overrideBreakPoint(
+    breakpointsRef.current = overrideBreakPoint(
       doubleExtraLargeBreakpoint,
       SizeType.DOUBLE_EXTRA_LARGE
     );
@@ -109,15 +109,15 @@ const Dropdown = ({
       const width = window.innerWidth;
       let newSizeType = SizeType.SMALL;
 
-      if (width >= breakPointsRef.current.DOUBLE_EXTRA_LARGE.minWidth) {
+      if (width >= breakpointsRef.current.DOUBLE_EXTRA_LARGE.minWidth) {
         newSizeType = SizeType.DOUBLE_EXTRA_LARGE;
-      } else if (width >= breakPointsRef.current.EXTRA_LARGE.minWidth) {
+      } else if (width >= breakpointsRef.current.EXTRA_LARGE.minWidth) {
         newSizeType = SizeType.EXTRA_LARGE;
-      } else if (width >= breakPointsRef.current.LARGE.minWidth) {
+      } else if (width >= breakpointsRef.current.LARGE.minWidth) {
         newSizeType = SizeType.LARGE;
-      } else if (width >= breakPointsRef.current.MEDIUM.minWidth) {
+      } else if (width >= breakpointsRef.current.MEDIUM.minWidth) {
         newSizeType = SizeType.MEDIUM;
-      } else if (width >= breakPointsRef.current.SMALL.minWidth) {
+      } else if (width >= breakpointsRef.current.SMALL.minWidth) {
         newSizeType = SizeType.SMALL;
       } else {
         newSizeType = SizeType.VERY_SMALL;
@@ -134,7 +134,7 @@ const Dropdown = ({
     id,
     children,
     activeDropdownTab,
-    breakPointsRef,
+    breakpointsRef,
     smallBreakpoint,
     mediumBreakpoint,
     largeBreakpoint,
@@ -144,8 +144,8 @@ const Dropdown = ({
   ]);
 
   useEffect(() => {
-    onBreakpointChange(id, sizeType, breakPointsRef.current);
-  }, [onBreakpointChange, id, sizeType, breakPointsRef]);
+    onBreakpointChange(id, sizeType, breakpointsRef.current);
+  }, [onBreakpointChange, id, sizeType, breakpointsRef]);
 
   const onTabChange = (selectedTab) => {
     const id = selectedTab.id;

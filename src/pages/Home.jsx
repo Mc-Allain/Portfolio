@@ -7,10 +7,11 @@ import DarkModePanel from "../components/DarkModeTheme/DarkModePanel";
 import ViewPager from "../components/ViewPager";
 import Tab from "../components/ViewPager/Tab";
 import Dropdown, { DropdownBreakpoints } from "../components/ViewPager/Dropdown";
+import { copyObject } from "../providers/Functions";
 
 const Home = () => {
   const { language } = useContext(LanguageContext);
-  const dropdownBreakpoints = DropdownBreakpoints;
+  const dropdownBreakpoints = copyObject(DropdownBreakpoints);
 
   dropdownBreakpoints.SMALL.poppedTabs = 1;
   dropdownBreakpoints.MEDIUM.poppedTabs = 2;
@@ -35,7 +36,7 @@ const Home = () => {
       <ViewPager className={'mt-2'}>
         <Tab name={'About me'}>About me</Tab>
         <Tab name={'Tech Stacks'}>Tech Stacks</Tab>
-        <Dropdown name={'More'}>
+        <Dropdown name={'More'} breakpoints={dropdownBreakpoints}>
           <Tab name={'Projects'}>Projects</Tab>
           <Tab name={'Experience'}>Experience</Tab>
           <Tab name={'Education'}>Education</Tab>

@@ -48,25 +48,30 @@ const TabLayout = ({ tabs, onTabChange }) => {
     breakpoints = DropdownBreakpoints
   ) => {
     const breakpoint = breakpoints[sizeType];
-    const children = getDropdownChildren(id);
+    const dropdown = getDropdown(id);
+    const children = dropdown.children;
 
     console.log(breakpoint);
-    console.log("Popped Tabs: ", children.slice(0, breakpoint.poppedTabs));
-    console.log("Dropdown: ", children.slice(breakpoint.poppedTabs, children.length));
+    console.log(dropdown, {
+      Popped_Tabs: children.slice(0, breakpoint.poppedTabs),
+      Dropdown: children.slice(breakpoint.poppedTabs, children.length)
+    });
   };
 
-  const getDropdownChildren = (dropdownId) => {
+  const getDropdown = (dropdownId) => {
     const filteredDropdowns = dropdowns.filter((dropdown) => {
       return dropdown.id === dropdownId;
     });
 
     return filteredDropdowns.length > 0
-        ? filteredDropdowns[0].children
-        : [];
+        ? filteredDropdowns[0]
+        : { children: []} ;
   }
 
   const initDropdown = (currentDropdown, selectedDropdown) => {
-    const children = getDropdownChildren(currentDropdown.id);
+    const children = getDropdown(currentDropdown.id).children;
+
+    console.log(currentDropdown);
 
     const handleDropdownTabOnClick = (selectedTab) => {
       onTabChange(selectedDropdown, selectedTab.item);
