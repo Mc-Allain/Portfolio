@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.c261f7b6.css",
+    "main.js": "/Portfolio/static/js/main.e364d297.js",
+    "static/js/787.19182de0.chunk.js": "/Portfolio/static/js/787.19182de0.chunk.js",
+    "static/media/overlook-from-tgsi.jpg": "/Portfolio/static/media/overlook-from-tgsi.eb04e439ff60e5a2f049.jpg",
+    "static/media/makoto.jpg": "/Portfolio/static/media/makoto.621029b6aeda6763a7c7.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.c261f7b6.css.map": "/Portfolio/static/css/main.c261f7b6.css.map",
+    "main.e364d297.js.map": "/Portfolio/static/js/main.e364d297.js.map",
+    "787.19182de0.chunk.js.map": "/Portfolio/static/js/787.19182de0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c261f7b6.css",
+    "static/js/main.e364d297.js"
+  ]
+}
