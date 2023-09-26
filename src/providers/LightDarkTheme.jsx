@@ -16,7 +16,9 @@ const ThemeColors = {
 		PROFILE_AND_COVER_PICTURE: 'bg-white',
 		PROFILE_PICTURE_CONTAINER: 'border-white',
 		PROFILE_INTRO: 'bg-white',
-		LANGUAGE_TOGGLE: 'hover:text-gray-600',
+		PROFILE_LOCATION: 'text-gray-600',
+		THEME_TOGGLE_ICON: 'text-gray-500 hover:text-blue-400',
+		LANGUAGE_TOGGLE: 'text-gray-500 hover:text-gray-700',
 	},
 	DARK:  {
 		APP_CONTAINER: 'bg-gray-700',
@@ -26,7 +28,8 @@ const ThemeColors = {
 		PROFILE_PICTURE_CONTAINER: 'border-gray-800',
 		PROFILE_INTRO: 'bg-gray-800',
 		PROFILE_LOCATION: 'text-gray-300',
-		LANGUAGE_TOGGLE: 'hover:text-gray-300',
+		THEME_TOGGLE_ICON: 'text-gray-400 hover:text-yellow-200 ',
+		LANGUAGE_TOGGLE: 'text-gray-400 hover:text-gray-300',
 	},
 }
 
