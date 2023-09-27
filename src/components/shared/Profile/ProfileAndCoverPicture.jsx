@@ -19,7 +19,7 @@ const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name }) => {
 			THEME_COLORS.PROFILE_AND_COVER_PICTURE
 		)}>
 			<div className="w-full h-[36vw] max-h-[290px] overflow-hidden relative">
-				<div className="absolute top-2 right-4 text-white font-bold text-border-black">
+				<div className="absolute top-2 right-4 text-white font-bold text-border-black text-end ml-40">
 					{language.coverPictureCaption}
 				</div>
 				<img src={coverPicture} alt={language.coverPicture} />
