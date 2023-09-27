@@ -38,7 +38,7 @@ const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name }) => {
 					<DarkModeIconToggle />
 				</div>
 			</div>
-			<div className="px-4 sm:px-8 py-2 text-left text-xl sm:text-2xl">{name}</div>
+			<div className="px-4 sm:px-8 py-2 text-left text-xl sm:text-2xl">{name + (language.personName.nickname ? ' (' + language.personName.nickname +')' : '')}</div>
 		</div>
 	);
 };

@@ -24,6 +24,7 @@ const LanguageValues = {
 			firstMiddleILast: "Mc Allain S. Casindad",
 			lastFirst: "Casindad, Mc Allain",
 			firstLast: "Mc Allain Casindad",
+			nickname: 'Makoto',
 		},
 
 		details: {
@@ -54,6 +55,7 @@ const LanguageValues = {
 			firstMiddleILast: "マック アレイン S. カシンダッド",
 			lastFirst: "カシンダッド, マック アレイン",
 			firstLast: "マック アレイン カシンダッド",
+			nickname: 'マコト・まこと・誠',
 		},
 		
 		details: {
