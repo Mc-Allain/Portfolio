@@ -10,6 +10,7 @@ const LanguageValues = {
 
 		profilePicture: "Profile Picture",
 		coverPicture: "Cover Picture",
+		coverPictureCaption: 'Overlooking from Tsukiden\'s 1st and 2nd Business Unit',
 
 		personName: {
 			namePlaceholder: "Your Name Displays Here",
@@ -28,7 +29,7 @@ const LanguageValues = {
 		details: {
 			header: "Design Engineer at Tsukiden Global Solutions Inc.",
 			subHeader:
-			"Studied Bachelor Science in Information Technology at Polytechnic University of the Philippines",
+			"Studied Bachelor of Science in Information Technology at Polytechnic University of the Philippines",
 			location: 'Muntinlupa, Metro Manila',
 		}
 	},
@@ -39,26 +40,27 @@ const LanguageValues = {
 
 		profilePicture: "プロフィール写真",
 		coverPicture: "カバー写真",
+		coverPictureCaption: 'ツキデン第1・第2事業部門からの俯瞰',
 
 		personName: {
 			namePlaceholder: "ここにお名前が表示されます",
-			last: "キャシンダド",
-			first: "マックアレイン",
+			last: "カシンダッド",
+			first: "マック アレイン",
 			middle: "サンチェズ",
 			middleI: "S.",
-			lastFirstMiddle: "キャシンダド, マックアレイン サンチェズ",
-			firstMiddleLast: "マックアレイン サンチェズ キャシンダド",
-			lastFirstMiddleI: "キャシンダド, マックアレイン S.",
-			firstMiddleILast: "マックアレイン S. キャシンダド",
-			lastFirst: "キャシンダド, マックアレイン",
-			firstLast: "マックアレイン キャシンダド",
+			lastFirstMiddle: "カシンダッド, マック アレイン サンチェズ",
+			firstMiddleLast: "マック アレイン サンチェズ カシンダッド",
+			lastFirstMiddleI: "カシンダッド, マック アレイン S.",
+			firstMiddleILast: "マック アレイン S. カシンダッド",
+			lastFirst: "カシンダッド, マック アレイン",
+			firstLast: "マック アレイン カシンダッド",
 		},
 		
 		details: {
-			header: "月電グローバルソリューションズ株式会社のデザインエンジニア",
+			header: "株式会社ツキデングローバルソリューションズのデザインエンジニア",
 			subHeader:
-			"フィリピン・ポリテクニック大学で情報工学の学士号を取得",
-			location: 'メトロマニラ、ムンティンルパ',
+			"フィリピン・ポリテクニック大学で情報技術の理学士号を取得",
+			location: 'ムンティンルパ、メトロマニラ',
 		}
 	},
 };

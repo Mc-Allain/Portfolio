@@ -4,6 +4,7 @@ import { LanguageContext } from "../../../providers/Language";
 import { LightDarkThemeContext } from "../../../providers/LightDarkTheme";
 import DarkModeIconToggle from "../Toggle/DarkModeIconToggle";
 import LanguageToggle from "../Toggle/LanguageToggle";
+import "./styles.css";
 
 const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name }) => {
 	const { THEME_COLORS } = useContext(LightDarkThemeContext);
@@ -17,7 +18,10 @@ const ProfileAndCoverPicture = ({ profilePicture, coverPicture, name }) => {
 		<div className={classNames(
 			THEME_COLORS.PROFILE_AND_COVER_PICTURE
 		)}>
-			<div className="w-full h-[36vw] max-h-[290px] overflow-hidden">
+			<div className="w-full h-[36vw] max-h-[290px] overflow-hidden relative">
+				<div className="absolute top-2 right-4 text-white font-bold text-border-black">
+					{language.coverPictureCaption}
+				</div>
 				<img src={coverPicture} alt={language.coverPicture} />
 			</div>
 			<div className="flex h-16 md:h-[55px] px-4 sm:px-8">
