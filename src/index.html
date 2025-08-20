@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Responsive Fixed Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <span class="text-xl font-semibold text-gray-800">Portfolio</span>
+        </div>
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+          <a href="#tech-stack" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Tech Stack</a>
+          <a href="#projects" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Projects</a>
+          <a href="#job-history" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Job History</a>
+          <a href="#education" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Education</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Social Media & Contact</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="flex items-center lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+      <a href="#tech-stack" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Tech Stack</a>
+      <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Projects</a>
+      <a href="#job-history" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Job History</a>
+      <a href="#education" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Education</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Social Media & Contact</a>
+    </div>
+  </nav>
+
+  <!-- Home Section Template -->
+  <section id="home" class="max-w-4xl mx-auto mt-24 bg-white rounded-xl shadow-md flex flex-col lg:flex-row overflow-hidden">
+    <!-- Left: Profile Image -->
+    <div class="lg:w-1/3 flex items-center justify-center bg-gray-100 p-6">
+      <img src="https://raw.githubusercontent.com/Mc-Allain/Portfolio/refs/heads/view-2-variant-1/src/images/Profile/Profile.jpg" alt="My Photo" class="rounded-full w-40 h-40 object-cover border-4 border-blue-200 shadow">
+    </div>
+    <!-- Right: Content -->
+    <div class="lg:w-2/3 flex flex-col justify-between p-8">
+      <!-- Top: Introduction -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Hello, I'm Mc Allain Casindad</h2>
+        <p class="text-gray-600 mb-4">
+          I'm a Software Engineer with over six years of experience in software development and design. I've built projects for Windows, Web, and Android, always focusing on clean and readable code.<br><br>
+          I also have experience as a Network Engineer in Japan, where I worked with network devices and domain controllers. This mix of skills helps me see the bigger picture when solving technical problems.<br><br>
+          Feel free to check out my work or reach out if you'd like to connect.
+        </p>
+      </div>
+      <!-- Bottom: Download Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-6">
+        <a href="#" class="flex-1 flex items-center justify-center text-center px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">Download CV</a>
+        <a href="#" class="flex-1 flex items-center justify-center text-center px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition">Download Portfolio</a>
+        <a href="#" class="flex-1 flex items-center justify-center text-center px-4 py-2 bg-gray-600 text-white rounded-lg font-medium hover:bg-gray-700 transition">Download Certificates</a>
+      </div>
+    </div>
+  </section>
+
+	<!-- Tech Stack Section -->
+  <section id="tech-stack" class="max-w-4xl mx-auto mt-16 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Tech Stack</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Example Card: Repeat for each tech -->
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">JavaScript</span>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">TypeScript</span>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">React</span>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">Node.js</span>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">Python</span>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-5 flex flex-col items-center hover:shadow-md transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="w-12 h-12 mb-3">
+        <span class="text-gray-800 font-medium">Docker</span>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-4xl mx-auto mt-16 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Projects</h2>
+    
+    <!-- 2024 Projects -->
+    <div class="mb-10">
+      <h3 class="text-xl font-semibold text-blue-700 mb-4">2024</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
+          <span class="text-lg font-semibold text-gray-800 mb-2">AI Portfolio Assistant</span>
+          <p class="text-gray-600 mb-3 flex-1">
+            A smart assistant for portfolio websites that helps users generate and organize content using AI.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">React</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">OpenAI API</span>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
+          <span class="text-lg font-semibold text-gray-800 mb-2">Task Tracker Pro</span>
+          <p class="text-gray-600 mb-3 flex-1">
+            A productivity app for tracking tasks, deadlines, and progress with real-time collaboration.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">Vue.js</span>
+            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">Firebase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023 Projects -->
+    <div class="mb-10">
+      <h3 class="text-xl font-semibold text-blue-700 mb-4">2023</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
+          <span class="text-lg font-semibold text-gray-800 mb-2">Personal Finance Manager</span>
+          <p class="text-gray-600 mb-3 flex-1">
+            A web app to manage personal finances, track expenses, and visualize spending habits.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">Angular</span>
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Node.js</span>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">MongoDB</span>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
+          <span class="text-lg font-semibold text-gray-800 mb-2">Portfolio Website</span>
+          <p class="text-gray-600 mb-3 flex-1">
+            My personal portfolio website to showcase my projects, skills, and experience.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">HTML</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">Tailwind CSS</span>
+            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more years/projects as needed -->
+  </section>
+
+  <!-- Job History Section -->
+  <section id="job-history" class="max-w-4xl mx-auto mt-16 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Job History</h2>
+    <div class="space-y-6">
+      <!-- Example Job Card -->
+      <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col md:flex-row md:items-center">
+				<!-- Logo on the left -->
+				<div class="flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 md:mr-6 w-16 h-16 bg-white rounded-full border border-gray-200 shadow-sm">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Company Logo" class="w-10 h-10 object-contain">
+				</div>
+        <div class="flex-1">
+          <span class="text-lg font-semibold text-gray-800">Software Engineer</span>
+          <span class="block text-gray-600">ABC Tech Solutions</span>
+          <span class="block text-gray-500 text-sm mb-2">Jan 2022 – Present | Manila, Philippines</span>
+          <ul class="list-disc list-inside text-gray-600 text-sm">
+            <li>Developed and maintained web applications using React and Node.js.</li>
+            <li>Collaborated with cross-functional teams to deliver scalable solutions.</li>
+            <li>Mentored junior developers and conducted code reviews.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col md:flex-row md:items-center">
+				<!-- Logo on the left -->
+				<div class="flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 md:mr-6 w-16 h-16 bg-white rounded-full border border-gray-200 shadow-sm">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Company Logo" class="w-10 h-10 object-contain">
+				</div>
+        <div class="flex-1">
+          <span class="text-lg font-semibold text-gray-800">Network Engineer</span>
+          <span class="block text-gray-600">XYZ Networks Japan</span>
+          <span class="block text-gray-500 text-sm mb-2">Apr 2019 – Dec 2021 | Tokyo, Japan</span>
+          <ul class="list-disc list-inside text-gray-600 text-sm">
+            <li>Configured and maintained network devices and domain controllers.</li>
+            <li>Provided technical support and troubleshooting for enterprise clients.</li>
+            <li>Documented network architectures and best practices.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Add more job cards as needed -->
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="max-w-4xl mx-auto mt-16 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Education</h2>
+    <div class="space-y-6">
+      <!-- Example Education Card -->
+      <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col md:flex-row md:items-center">
+				<!-- Logo on the left -->
+				<div class="flex-shrink-0 flex items-center justify-center mb-4 md:mb-0 md:mr-6 w-16 h-16 bg-white rounded-full border border-gray-200 shadow-sm">
+					<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Company Logo" class="w-10 h-10 object-contain">
+				</div>
+        <div class="flex-1">
+          <span class="text-lg font-semibold text-gray-800">Bachelor of Science in Computer Science</span>
+          <span class="block text-gray-600">University of the Philippines</span>
+          <span class="block text-gray-500 text-sm mb-2">2014 – 2018</span>
+          <ul class="list-disc list-inside text-gray-600 text-sm">
+            <li>Graduated with honors (Cum Laude).</li>
+            <li>Specialized in software engineering and network systems.</li>
+            <li>Active member of the Computer Science Society.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Add more education cards as needed -->
+    </div>
+  </section>
+
+  <!-- Social Media & Contact Section -->
+  <section id="contact" class="max-w-4xl mx-auto mt-16 bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Social Media & Contact</h2>
+    <div class="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-6 md:space-y-0">
+      <!-- Social Media Links -->
+      <div class="flex-1">
+        <h3 class="text-lg font-medium text-gray-700 mb-3">Find me on</h3>
+        <div class="flex space-x-4 mb-4">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8 transition-transform group-hover:scale-110">
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8 transition-transform group-hover:scale-110">
+          </a>
+          <a href="mailto:career.mcallain@gmail.com" class="group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" class="w-8 h-8 transition-transform group-hover:scale-110">
+          </a>
+          <!-- Add more social icons as needed -->
+        </div>
+        <div class="mt-2">
+          <span class="block text-gray-700 font-medium">Contact Number:</span>
+          <a href="tel:+639922192332" class="text-blue-600 hover:underline text-base">+63 992 219 2332</a> (Recommended)<br>
+          <a href="tel:+639763263757" class="text-blue-600 hover:underline text-base">+63 976 326 3757</a>
+        </div>
+      </div>
+      <!-- Contact Form -->
+      <div class="flex-1">
+        <h3 class="text-lg font-medium text-gray-700 mb-3">Send a message</h3>
+        <form class="space-y-3">
+          <input type="text" name="name" placeholder="Your Name" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200" required>
+          <input type="email" name="email" placeholder="Your Email" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200" required>
+          <textarea name="message" rows="3" placeholder="Your Message" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200" required></textarea>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Simple mobile menu toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

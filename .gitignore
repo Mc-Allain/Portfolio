@@ -1,0 +1,93 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore build output
+dist/
+build/
+out/
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore node modules and package managers
+node_modules/
+bower_components/
+jspm_packages/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Ignore logs and reports
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Ignore coverage and test output
+coverage
+*.lcov
+.nyc_output
+.grunt
+.cache
+.parcel-cache
+.npm
+.eslintcache
+.stylelintcache
+.node_repl_history
+*.tgz
+
+# Ignore TypeScript and build cache
+*.tsbuildinfo
+
+# Ignore framework-specific output
+.next
+.nuxt
+.svelte-kit/
+.vuepress/dist
+.temp
+.docusaurus
+.serverless/
+.fusebox/
+.dynamodb/
+.firebase/
+.tern-port
+
+# Ignore Vite and Gatsby
+.cache/
+.vitepress/
+**/.vitepress/dist
+**/.vitepress/cache
+
+# Ignore VSCode test
+.vscode-test
+
+# Ignore output of 'npm pack'
+*.tgz
+
+# Ignore lock files
+.lock-wscript
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore instrumented libs
+lib-cov
+
+# Ignore Snowpack
+web_modules/
