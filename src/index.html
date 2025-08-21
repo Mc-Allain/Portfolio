@@ -7,6 +7,30 @@
   <title>Mc Allain Casindad - Portfolio</title>
 </head>
 <body>
+
+  <!-- Modal for Logistics Web Application Screenshots -->
+  <div id="screenshot-modal" class="fixed inset-0 z-50 items-center justify-center bg-black/50 hidden">
+    <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full p-6 relative">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+      <h3 id="modal-title" class="text-lg font-semibold text-gray-800 mb-4"></h3>
+      <div class="relative">
+        <!-- <div class="carousel-slide">
+          <img src="images/screenshots/logistics-web-app-1.png" alt="Screenshot 1" class="w-full rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 1</div>
+        </div>
+        <div class="carousel-slide hidden">
+          <img src="images/screenshots/logistics-web-app-2.png" alt="Screenshot 2" class="w-full rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 2</div>
+        </div> -->
+        <!-- Add more slides as needed -->
+        <div class="flex justify-between mt-2">
+          <button id="carousel-prev" onclick="prevSlide()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300" disabled>Prev</button>
+          <button id="carousel-next" onclick="nextSlide()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- Responsive Fixed Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-sm z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,6 +260,10 @@
             <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">React</span>
             <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">TypeScript</span>
           </div>
+          <!-- <button onclick="openModal('Logistics Web Application')" 
+            class="mt-2 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screens
+          </button> -->
         </div>
       </div>
     </div>
@@ -368,6 +396,42 @@
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+    });
+
+    // Modal and Carousel logic
+    function openModal(title = 'Project') {
+      const modal = document.getElementById('screenshot-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      const modalTitle = document.getElementById('modal-title');
+      modalTitle.textContent = title + ' Screenshots';
+    }
+    function closeModal() {
+      const modal = document.getElementById('screenshot-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    let currentSlide = 0;
+    function showSlide(idx) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      if (slides.length === 0) return;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden', i !== idx);
+      });
+      currentSlide = idx;
+      document.getElementById('carousel-prev').disabled = idx === 0;
+      document.getElementById('carousel-next').disabled = idx === slides.length - 1;
+    }
+    function nextSlide() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+    }
+    function prevSlide() {
+      if (currentSlide > 0) showSlide(currentSlide - 1);
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      showSlide(0);
     });
   </script>
 </body>
