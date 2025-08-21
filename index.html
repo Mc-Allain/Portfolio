@@ -542,12 +542,23 @@
       showSlide(0);
     });
 
-    grecaptcha.ready(() => {
-      grecaptcha.execute('6LfGOq0rAAAAAOKmRl2uCy1xMaZIlofKmHfx4TJw', {action: 'submit'}).then(token => {
-        document.querySelector('form').insertAdjacentHTML('beforeend',
-          `<input type="hidden" name="g-recaptcha-response" value="${token}">`
-        );
-      });
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      // Disable the submit button to prevent multiple submissions
+      document.querySelector("button[type='submit']").disabled = true;
+
+      const token = await grecaptcha.execute('6LfGOq0rAAAAAOKmRl2uCy1xMaZIlofKmHfx4TJw', { action: 'submit' });
+
+      const hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.name = "g-recaptcha-response";
+      hiddenInput.value = token;
+      form.appendChild(hiddenInput);
+
+      form.submit(); // Now submit with fresh token
     });
   </script>
 </body>
