@@ -993,3 +993,26 @@
     }
   }
 }
+
+/* Modal sizing */
+.max-w-80vw {
+  max-width: 80vw;
+}
+.max-h-80vh {
+  max-height: 80vh;
+}
+
+/* Carousel slides */
+.carousel-slide {
+  display: none; /* hide all slides */
+}
+.carousel-slide.active {
+  display: block; /* show only active */
+}
+
+/* Image container */
+.carousel-image {
+  max-height: 50vh;   /* keep images inside modal */
+  width: 100%;
+  object-fit: contain; /* scale proportionally */
+}

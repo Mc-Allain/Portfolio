@@ -9,28 +9,149 @@
 </head>
 <body>
 
-  <!-- Modal for Logistics Web Application Screenshots -->
-  <div id="screenshot-modal" class="fixed inset-0 z-50 items-center justify-center bg-black/50 hidden">
-    <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full p-6 relative">
-      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-      <h3 id="modal-title" class="text-lg font-semibold text-gray-800 mb-4"></h3>
+  <!-- Modal for WSAP Android App Screenshots -->
+  <div id="wsap-android-app-screenshot-modal" 
+     class="fixed inset-0 z-50 items-center justify-center bg-black/50 hidden">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-80vw max-h-80vh p-6 relative overflow-y-auto">
+      <!-- Close Button -->
+      <button onclick="closeModal('wsap-android-app')" 
+              class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+      
+      <!-- Title -->
+      <h3 id="modal-title" class="text-lg font-semibold text-gray-800 mb-4">
+      </h3>
+      
+      <!-- Carousel -->
       <div class="relative">
-        <!-- <div class="carousel-slide">
-          <img src="images/screenshots/logistics-web-app-1.png" alt="Screenshot 1" class="w-full rounded mb-2">
+        <div class="carousel-slide active">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img.jpg" 
+              alt="Screenshot 1" 
+              class="carousel-image rounded mb-2">
           <div class="text-center text-gray-600 text-sm mb-2">Screenshot 1</div>
         </div>
-        <div class="carousel-slide hidden">
-          <img src="images/screenshots/logistics-web-app-2.png" alt="Screenshot 2" class="w-full rounded mb-2">
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img2.jpg" 
+              alt="Screenshot 2" 
+              class="carousel-image rounded mb-2">
           <div class="text-center text-gray-600 text-sm mb-2">Screenshot 2</div>
-        </div> -->
-        <!-- Add more slides as needed -->
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img3.jpg" 
+              alt="Screenshot 3" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 3</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img4.jpg" 
+              alt="Screenshot 4" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 4</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img5.jpg" 
+              alt="Screenshot 5" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 5</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img6.jpg" 
+              alt="Screenshot 6" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 6</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img7.jpg" 
+              alt="Screenshot 7" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 7</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img8.jpg" 
+              alt="Screenshot 8" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 8</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img9.jpg" 
+              alt="Screenshot 9" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 9</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img10.jpg" 
+              alt="Screenshot 10" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 10</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img11.jpg" 
+              alt="Screenshot 11" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 11</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img12.jpg" 
+              alt="Screenshot 12" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 12</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img13.jpg" 
+              alt="Screenshot 13" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 13</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img14.jpg" 
+              alt="Screenshot 14" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 14</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img15.jpg" 
+              alt="Screenshot 15" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 15</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img16.jpg" 
+              alt="Screenshot 16" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 16</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img17.jpg" 
+              alt="Screenshot 17" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 17</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img18.jpg" 
+              alt="Screenshot 18" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 18</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="./resources/03_Projects/wsap_android_app/wsap_android_app_img19.jpg" 
+              alt="Screenshot 19" 
+              class="carousel-image rounded mb-2">
+          <div class="text-center text-gray-600 text-sm mb-2">Screenshot 19</div>
+        </div>
+
+        <!-- Counter -->
+        <div id="carousel-counter" class="text-center text-gray-700 text-sm mt-2">
+          1 / 19
+        </div>
+
+        <!-- Controls -->
         <div class="flex justify-between mt-2">
-          <button id="carousel-prev" onclick="prevSlide()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300" disabled>Prev</button>
-          <button id="carousel-next" onclick="nextSlide()" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Next</button>
+          <button class="carousel-prev px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50" disabled>Prev</button>
+          <button class="carousel-next px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50">Next</button>
         </div>
       </div>
     </div>
   </div>
+
   
   <!-- Responsive Fixed Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-sm z-50">
@@ -308,10 +429,6 @@
             <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">React</span>
             <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">TypeScript</span>
           </div>
-          <!-- <button onclick="openModal('Logistics Web Application')" 
-            class="mt-2 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition text-center">
-              View Screens
-          </button> -->
         </div>
       </div>
     </div>
@@ -367,6 +484,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Firebase Real-time Database</span>
             <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">Java</span>
           </div>
+          <button onclick="openModal('WSAP Android App', 'wsap-android-app')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
         <!-- Mobile Palengke -->
         <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
@@ -386,6 +507,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Firebase Storage</span>
             <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">Java</span>
           </div>
+          <button onclick="openModal('Mobile Palengke', 'mobile-palengke')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
         <!-- WSAP Internship Portal -->
         <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
@@ -403,6 +528,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">MySQL</span>
             <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded">PHP</span>
           </div>
+          <button onclick="openModal('WSAP Internship Portal', 'wsap-internship-portal')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
       </div>
     </div>
@@ -430,6 +559,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Firebase Real-time Database</span>
             <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">Java</span>
           </div>
+          <button onclick="openModal('iBooking', 'ibooking')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
         <!-- Wiggly Tails Veterinary Clinic -->
         <div class="bg-gray-50 rounded-lg shadow p-6 hover:shadow-md transition flex flex-col">
@@ -470,6 +603,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">MySQL</span>
             <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">C#</span>
           </div>
+          <button onclick="openModal('IWAS-CORONA Game', 'iwas-corona-game')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
       </div>
     </div>
@@ -493,6 +630,10 @@
             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">MySQL</span>
             <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 rounded">Visual Basic.NET</span>
           </div>
+          <button onclick="openModal('Computerized Voting System', 'computerized-voting-system')" 
+            class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium hover:bg-blue-700 transition text-center">
+              View Screenshots
+          </button>
         </div>
       </div>
     </div>
@@ -634,41 +775,67 @@
     });
 
     // Modal and Carousel logic
-    function openModal(title = 'Project') {
-      const modal = document.getElementById('screenshot-modal');
+    function openModal(title = 'Project', modalId = '') {
+      const modal = document.getElementById(modalId + '-screenshot-modal');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
 
       const modalTitle = document.getElementById('modal-title');
       modalTitle.textContent = title + ' Screenshots';
+
+      initCarousel(modalId + '-screenshot-modal');
     }
-    function closeModal() {
-      const modal = document.getElementById('screenshot-modal');
+    function closeModal(modalId = '') {
+      const modal = document.getElementById(modalId + '-screenshot-modal');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
-    let currentSlide = 0;
-    function showSlide(idx) {
-      const slides = document.querySelectorAll('.carousel-slide');
-      if (slides.length === 0) return;
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('hidden', i !== idx);
-      });
-      currentSlide = idx;
-      document.getElementById('carousel-prev').disabled = idx === 0;
-      document.getElementById('carousel-next').disabled = idx === slides.length - 1;
-    }
-    function nextSlide() {
-      const slides = document.querySelectorAll('.carousel-slide');
-      if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
-    }
-    function prevSlide() {
-      if (currentSlide > 0) showSlide(currentSlide - 1);
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      showSlide(0);
-    });
+    
+    function initCarousel(modalId) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
 
+      const slides = modal.querySelectorAll('.carousel-slide');
+      const prevBtn = modal.querySelector('.carousel-prev');
+      const nextBtn = modal.querySelector('.carousel-next');
+      const counter = modal.querySelector('#carousel-counter');
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - 1;
+
+        // Update counter
+        if (counter) {
+          counter.textContent = `${index + 1} / ${slides.length}`;
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      }
+
+      function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      }
+
+      // Attach events
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+
+      // Initialize
+      showSlide(currentSlide);
+    }
 
     const form = document.querySelector("form");
 
